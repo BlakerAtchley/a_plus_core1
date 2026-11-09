@@ -2,7 +2,7 @@
 
 Organized reference notes on networking, hardware, virtualization, peripherals, and troubleshooting.
 
-
+---
 
 ## Networking Fundamentals
 
@@ -24,7 +24,7 @@ Port numbers identify network services. The client and server must use compatibl
 
 #### FTP (File Transfer Protocol)
 
-TCP ports 20 (active-mode data) and 21 (control)
+FTP uses TCP port 20 for active-mode data and port 21 for control.
 - Transfers files between systems
 - Authenticates with a username and password
 - Some systems use a generic or anonymous login
@@ -32,32 +32,32 @@ TCP ports 20 (active-mode data) and 21 (control)
 
 #### SSH (Secure Shell)
 
-Encrypted communication link over TCP port 22
+SSH provides an encrypted communication link over TCP port 22.
 - Provides command-line remote access similar to Telnet, but encrypted
 
 #### Telnet (Teletype Network)
 
-TCP port 23
+Telnet uses TCP port 23.
 - Log in to devices remotely
 - Often used for console access
 - Sends data in clear text and is not recommended for production systems
 
 #### SMTP (Simple Mail Transfer Protocol)
 
-TCP port 25
+SMTP uses TCP port 25.
 - Transfers email between servers and can submit mail from a device to a mail server
 - Clients use protocols such as IMAP or POP3 to retrieve email
 
 #### DNS (Domain Name System)
 
-UDP and TCP port 53
+DNS uses UDP and TCP port 53.
 - Resolves domain names to IP addresses
 - Example: `www.professormesser.com` resolves to an IP address
 - DNS is a critical service; networks commonly use multiple DNS servers
 
 #### DHCP (Dynamic Host Configuration Protocol)
 
-Automated configuration of IP address, subnet mask, and other options over UDP ports 67 (server) and 68 (client)
+DHCP automatically configures IP addresses, subnet masks, and other options over UDP ports 67 (server) and 68 (client).
 - Requires a DHCP server, appliance, or a feature integrated into a SOHO router
 - Assigns addresses dynamically from a pool
 - Each system receives a lease and must renew it at set intervals
@@ -65,425 +65,304 @@ Automated configuration of IP address, subnet mask, and other options over UDP p
 
 #### HTTP and HTTPS
 
-Hypertext Transfer Protocol (HTTP) and its encrypted version, HTTPS
-- Used by web browsers and other applications
-- HTTP traffic is unencrypted; HTTPS traffic is encrypted
+HTTP is the Hypertext Transfer Protocol; HTTPS is its encrypted version.
+Cloud computing is more than hosting a server elsewhere; it extends the management of applications and services.
 - Supported by nearly all web servers and clients
-- HTTP uses TCP port 80; HTTPS uses TCP port 443
-
+Cloud resources can scale substantially, with costs based on the services and capacity used.
 #### POP3 and IMAP
-
-Receive email from an email server
+You can deploy infrastructure in minutes and create or remove resources as needed.
 - POP3 (Post Office Protocol version 3) uses TCP port 110 for basic email retrieval
-- IMAP4 (Internet Message Access Protocol version 4) uses TCP port 143 and supports inbox management across multiple clients
-
+Cloud providers offer an international presence, allowing deployments in specific regions.
 #### SMB (Server Message Block)
-
-- Used by Microsoft Windows for file and printer sharing; also called CIFS (Common Internet File System)
+Use only the resources you need; costs are based on consumption.
 - NetBIOS over TCP/IP uses UDP port 137 for name services and TCP port 139 for session service
-- Direct SMB communication uses TCP port 445 without NetBIOS
+### Cloud deployment models
 
-#### LDAP and LDAPS
+#### Public cloud
+Public cloud services are generally available over the internet.
+LDAP (Lightweight Directory Access Protocol) uses TCP port 389; LDAPS commonly uses TCP port 636.
+#### Private cloud
+A private cloud is an organization's own virtualized data center.
 
-LDAP (Lightweight Directory Access Protocol) uses TCP port 389; LDAPS commonly uses TCP port 636
-- Stores and retrieves information in a network directory
-- Commonly used in Microsoft Active Directory
-
-#### RDP (Remote Desktop Protocol)
-
-Share a desktop from a remote location over TCP port 3389
-- Remote Desktop Services is included in many Windows versions
-- Can connect to an entire desktop or a single application
+#### Hybrid cloud
+A hybrid cloud combines public and private cloud resources.
+RDP lets users share a desktop remotely over TCP port 3389.
+#### Community cloud
+Several organizations share the same cloud resources.
 - Clients are available for Windows, macOS, Linux, iOS, Android, and other platforms
-
+### Infrastructure as a Service (IaaS)
 ### Port Reference
-
-| Service | Protocol and port | Purpose |
-| --- | --- | --- |
-| FTP | TCP 20 (active data), 21 (control) | File transfer |
-| SSH | TCP 22 | Encrypted remote access |
-| Telnet | TCP 23 | Unencrypted remote access |
-| SMTP | TCP 25 | Email transfer and submission |
-| DNS | UDP/TCP 53 | Name resolution |
-| DHCP | UDP 67 (server), 68 (client) | Automatic IPv4 configuration |
-| HTTP | TCP 80 | Web traffic |
-| POP3 | TCP 110 | Email retrieval |
-| NetBIOS | UDP 137, TCP 139 | Name and session services |
-| IMAP | TCP 143 | Email access and inbox management |
-| HTTPS | TCP 443 | Encrypted web traffic |
-| SMB | TCP 445 | File and printer sharing |
-| LDAP | TCP 389 | Directory access |
-| LDAPS | TCP 636 | Encrypted directory access |
-| RDP | TCP 3389 | Remote desktop |
-
+IaaS is sometimes called hardware as a service (HaaS) because organizations outsource their equipment.
+| ------- | ---------------------------------- | --------------------------------- |
+The customer remains responsible for managing and securing its systems.
+| SSH     | TCP 22                             | Encrypted remote access           |
+Data is hosted remotely but remains under the customer's control.
+| SMTP    | TCP 25                             | Email transfer and submission     |
+Web server hosting is one example of IaaS.
+| DHCP    | UDP 67 (server), 68 (client)       | Automatic IPv4 configuration      |
+### Software as a Service (SaaS)
+| POP3    | TCP 110                            | Email retrieval                   |
+SaaS provides on-demand software without requiring a local installation.
+- Examples include email and payroll services.
+| SMB     | TCP 445                            | File and printer sharing          |
+The provider centrally manages the application and hosts the customer's data.
+| RDP     | TCP 3389                           | Remote desktop                    |
+SaaS is a complete application offering and requires no application development by the customer.
+- Examples include Google Mail (Gmail) and Microsoft 365.
 ## Wireless Network Technologies
+### Platform as a Service (PaaS)
+### Wireless technologies
+PaaS provides a managed platform, including servers, software, maintenance, and facilities; the customer focuses on development.
 
+The provider manages the platform and may employ security professionals to monitor it.
+- Evaluate the provider and its security controls carefully.
+Wi-Fi generations are also referenced by their IEEE standard:
+Develop applications by combining the services and components available on the platform.
+- Salesforce.com is one example of a PaaS provider.
+- Future versions will increment accordingly.
+### Shared responsibility matrix
+#### 802.11 technologies
+Cloud environments share resources, but the amount of sharing and customer control varies by model.
+**Frequencies**
+#### Internal or private cloud
+An organization builds its own cloud with dedicated resources.
+- Costs are primarily upfront, with fewer ongoing service charges.
+- Frequencies are managed by governing entities
+#### External or public cloud
+An external cloud uses shared resources on infrastructure owned by a third party.
+- Costs may be metered or paid upfront.
+- Common widths include 20, 40, 80, and 160 MHz
+### Metered and non-metered billing
+**Band selection and bandwidth**
+With metered utilization, you pay for the resources you use.
+- Charges may apply to uploads (ingress traffic), storage, and downloads (egress traffic).
 
+With non-metered utilization, you pay for a fixed block of storage and may not pay per upload or download.
+#### RFID (radio-frequency identification)
+### Cloud computing characteristics
+- Uses include access badges, inventory and assembly-line tracking, and pet or animal identification.
+**Elasticity:** Scale resources up or down as needed, often with rapid provisioning.
 
-Wireless technologies
-IEEE standards
-- Institute of Electrical and Electronics Engineers
-- 802.11 committee
-- Everyone follows these standards.
-Also referenced as a generation
-- 802.11ac is WIFI 5
-- 802.11ax is WIFI 6 and WIFI 6e (extended)
-- 802.11be is WIFI 7
-- Future versions will increment accordingly
+**Availability:** Redundancy helps keep services available.
+- Used in payment systems, including major credit cards and online wallets.
+**File synchronization:** Information can be duplicated across cloud locations.
 
-802.11 technologies
-Frequencies
-- 2.4 GHz, 5, and 6 GHz
-- Sometimes a combination
-Channels
-- Groups of frequencies, numbered by the IEEE
-- Frequencies are managed by giverning entities
-- Using non-overlapping channles would be optimal
-Bandwidth
-- Amount of frequency in use
-- 20MHz, 40, 80, 160MHz
-
-Band selection and bandwidth
-- 2.4 GHz: three commonly used non-overlapping 20 MHz channels in North America
-- 5 GHz: channel widths commonly range from 20 to 160 MHz
-- 6 GHz: supports wider channels, with available widths depending on the Wi-Fi generation and region
-
-Bluetooth
-Remove the wires
-- Headsets
-- Speakers
-- Keybords/Mice
-Uses the 2.4GHz range
-- Unlicensed ISM (Industrial, Scientific, and Medical) band
-- Same as 802.11
-Short-range
-- Most consumer devices operate over a range of about 10 meters
-
-RFID (Radio-frequency identification)
-- Access badges
-- Inventory/Assembly line tracking
-- Pet/Animal identification
-- Anything that needs to be trakced
-Radar technology
-- Radio energy transmitted to the tag
-- RF powers the tag, ID is transmitted back
-- Bidirectional communication
-- Some tag formats can be active/powered
-
-NFC (Near-field communication)
-Two-way wireless communication
-- Builds on RFID, which is mostly one way
-Payment systems
-- Major credit cards
-- Online wallets
-Bootstrap for other wireless
-- NFC helps with Bluetooth pairing
-Access token, Identity "card"
-- Short range with encryption support
-
-
+**Multitenancy:** Multiple clients use the same cloud infrastructure.
 ## DNS Configuration
 
+### Domain Name System
 
-Domain Name System
-Translates human-readbale names into computer-readable IP addresses
-- You only need to remember www.professormesser.com
-Hierarchial
-- Follow the path
-Distributed database
-Many DNS Servers
-- 13 root server clusters (over 1,000 actual servers)
-- Hundres of generic top level domains (gTLDs) - .com, .org, .net, .etc
-- over 275 country code top-level domains (ccTLDs) - .us, .ca, .uk
+The Domain Name System (DNS) translates human-readable names into computer-readable IP addresses. For example, users can remember `www.professormesser.com` instead of an IP address.
 
-DNS lookup
-- dig command - query macOS ; Windows nslookup
+DNS is hierarchical and distributed.
+- Queries follow the hierarchy.
+- The system uses many DNS servers, including 13 root server clusters with more than 1,000 servers.
+- Hundreds of generic top-level domains (gTLDs) exist, such as `.com`, `.org`, and `.net`.
+- More than 275 country-code top-level domains (ccTLDs) exist, such as `.us`, `.ca`, and `.uk`.
 
-DNS records
-Resource Records (RR)
-- The database records of domain name services
-Over 30 record types
-- IP addresses, certificates, host alias names, etc
+### DNS lookup
+
+- Use the `dig` command on macOS or `nslookup` on Windows.
+
+### DNS records
+
+Resource records (RRs) are entries in the DNS database. More than 30 record types are used for IP addresses, certificates, host aliases, and other information.
 > **Important:** DNS records are critical configurations. Back up, verify, and test changes.
 
-Address records (A) (AAAA)
-Defines the IP address of a host
-- This is the most popular query
-A records are IPv4 adddresses
-- Modify the A record to change the host name to IP address resolution
-AAAA records are for IPv6 addresses
-- the same DNS server, different records
+#### A and AAAA records
 
-Canonical name records (CNAME)
-- One physical server, multiple services
+Address records define a host's IP address. A records contain IPv4 addresses; AAAA records contain IPv6 addresses.
+- A records are among the most common DNS queries.
+- Update an A record to change the IPv4 address associated with a host name.
 
-Mail exchanger records (MX)
-- This isn't an IP address; it's a name
-- Send and recieve Email 
+#### CNAME records
 
-Text Records (TXT)
-Human readable text information
-- Useful public information
-- Was originally designed for informal information
-Can be used for verification purposes
-- If you have access to the NS then you must be the administrator of the domain name
-Commonly used for email security
-- External email servers validate information from your DNS
+Canonical name (CNAME) records allow multiple service names to point to one host name.
 
-Domain Keys Identified Mail (DKIM)
-- Validated by mail servers, not usually seen by the end user
-- The public key is in the DKIM TXT record
+#### MX records
 
-Sender Poicy Framework (SPF)
-SPF protocol
-- A list of all servers authorized to send emails for his domain
-- Prevent mail spoofing
-- Mail servers perform a check to see if incoking mail really did come from an authorized host
+Mail exchanger (MX) records identify the mail server responsible for receiving email for a domain.
 
-DMARC
-Domain based Message Authentication, Reporting, and Conformance (DMARC)
-- Prevent unauthorized email use(spoofing)
-- An extension of SPF and DKIM
-You decide what exteernal email servers should do with emails that don't validate through SPF or DKIM
-- That policy is written into a DMARC TXT record
-- Accept all, send to spam, or rejet the email
-- Compliance reports can be sent to the email administrator
+#### TXT records
 
+Text (TXT) records store text information and can be used for domain verification and email security.
+- Administrators who can change a domain's DNS records can typically verify control of that domain.
+- External email servers use DNS information to validate messages.
+
+#### DKIM
+
+DomainKeys Identified Mail (DKIM) is validated by mail servers and is not usually visible to end users.
+- The public key is stored in a DKIM TXT record.
+
+#### SPF
+
+Sender Policy Framework (SPF) records list the servers authorized to send email for a domain.
+- SPF helps prevent mail spoofing.
+- Mail servers check whether incoming messages came from an authorized host.
+
+#### DMARC
+
+Domain-based Message Authentication, Reporting, and Conformance (DMARC) extends SPF and DKIM to help prevent unauthorized email use, such as spoofing.
+- A DMARC TXT record tells external email servers how to handle messages that fail SPF or DKIM validation.
+- Policies can accept messages, send them to spam, or reject them.
+- Compliance reports can be sent to the email administrator.
+
+---
 
 ## DHCP
 
+### DHCP overview
 
-DHCP
-IPv4 address configuration used to be manual 
-- Ip address, subnet mask, default gateway, DNS servers, NTP servers
-Needed a more automatic method
-- Scale to thousands of systems
-- Hands off Ip configurations
-Dynamic Host Configuration Protocol (DHCP)
-- Intially realeased in 1997, updated throgh the years
-- Provides automatic address/IP configuration
-- used for almost all devices
+IPv4 addresses, subnet masks, default gateways, DNS servers, and NTP servers were once configured manually. DHCP provides an automatic approach that scales to thousands of systems.
+- The Dynamic Host Configuration Protocol (DHCP) was initially released in 1997 and has been updated over time.
+- DHCP provides automatic IP configuration and is used by most network-connected devices.
 
-DORA leases
-- A four step process
-Discover
-- Find a DHCP server
-Offer
-- Get an Offer
-Request
-- Lock in the offer
-Acknowledge
-- DHCP server confirmation
+### DORA lease process
 
-DHCP Scopes
-Configured on the SHCP server
-IP addres range
-- And excluded addresses
-Subnet mask
-Lease durations
-Other scope options
-- DNS server
-- Defualt gateway
-- VoIP servers
+DORA is a four-step process for obtaining a DHCP lease:
+- **Discover:** Find a DHCP server.
+- **Offer:** Receive an address offer.
+- **Request:** Request the offered address.
+- **Acknowledge:** Receive confirmation from the DHCP server.
 
-DHCP protocols
-Group of IP addresses
-Each subnet has its own scope
-- 192.168.1.0/24
-- 192.168.2.0/24
-- 192.168.3.0/24
-A scope is generally a single contigious pool of IP addresses
-- DHCP exclusions can be made inside of the scope
+### DHCP scopes
 
-Address reservation
-- Administratively configured
-Table of MAC addresses
-- Each MAC address has a matching IP address
-Other name
-- Static DHCP Assignement 
-- Static DHCP
-- IP Reservation
+A DHCP scope is configured on the DHCP server and defines an IP address range.
+- Administrators can exclude specific addresses from the range.
+- Scope options include the subnet mask, lease duration, DNS server, default gateway, and VoIP servers.
+- Each subnet has its own scope, such as `192.168.1.0/24`, `192.168.2.0/24`, or `192.168.3.0/24`.
+- A scope is generally a single contiguous pool of IP addresses; exclusions can be configured within it.
 
+### Address reservations
+
+An administrator can reserve an IP address for a specific MAC address.
+- This is also called static DHCP or an IP reservation.
+
+---
 
 ## VLANs and VPNs
 
+### LANs and VLANs
 
-Local Area Networks (LANs)
-- A group of devices in the same broadcast domain
+A local area network (LAN) is a group of devices in the same broadcast domain.
+- A virtual LAN (VLAN) separates devices logically rather than physically.
+- VLANs are configured on the local area network.
 
-Virtual Local Area Netwrok (VLANs)
-- A group of devices in the same broadcast domians
-- Seperated logically intsead of physically
+### VPNs
 
-Configuring VLANs
-Local Area Network
-- A group of devices in the same broadcast domain
+A virtual private network (VPN) carries encrypted, private data across a public network.
+- A VPN concentrator encrypts and decrypts traffic and is often integrated into a firewall.
+- VPNs can use specialized cryptographic hardware or software, sometimes built into the operating system.
 
-VPNs (Virtual Private Network)
-- Encrypted (private) data trasversing a public network
+#### Client-to-site VPN
 
-Concentrator
-- Encryption/decryption access device
-- Often integrated into a firewall
-Many deployment options
-- Specialized cyrpotgraphic hardware
-- Software-based options available
-Used with client software
-- Sometimes built into the OS
+Provides on-demand remote access from a client device to a VPN concentrator. Some software can be configured to connect automatically.
 
-Clinet-to-Site VPN
-On deman access from a remote device
-- Software connects to a VPN concentrator
-Some software can be configured as always on
+#### Site-to-site VPN
 
-Site-to-Site VPN
-Always-on
-- Or almost always
-Firwalls often act as VPN concentratoers
-- Probably already have firewalls in place
+Connects networks through an always-on or nearly always-on VPN tunnel. Firewalls often act as VPN concentrators.
 
+---
 
 ## Network Devices
 
+Network devices perform different roles, and some combine several functions in one unit, such as a wireless router, switch, and firewall. Compare devices to determine where each is appropriate.
 
-Network Devices
-many different devices and components
-- All have different roles
-Some of these functions are combined together
-- Wireless router/switch/firewall
-Compare different devices
-- Undertsand when they shoudl be used
+### Routers
 
-Routers
-Routes traffic between IP subnets
-- Makes forwarding decisions based on IP address
-- Routers inside of switches sometimes called "Layer 3 switches" (OSI Layer 3)
-Often connects diverse network types
-- LAN, WAN, copper, fiber
+Routers forward traffic between IP subnets.
+- They make forwarding decisions based on IP addresses.
+- Routers integrated into switches are sometimes called Layer 3 switches (OSI layer 3).
+- They often connect diverse network types, including LANs, WANs, copper, and fiber.
 
-Switches
-Bridging done in hardware
-- Application specific integrated circuit (ASIC)
-- Forwards traffic based on data link address
-Many ports and features
-- The core of an enterprise network
-- May provide Power over Ethernet (PoE)
-Multilayer switch
-- Includes routing functionality
+### Switches
 
-Unmanaged switches
-Very few configuration options
-- Plug and play
-Fixed configuration
-- No VLANs
-Very little intergration with other devices
-- No management protocols
-Low price point
-- Simple is less expensive
+Switches bridge devices in hardware, often using an application-specific integrated circuit (ASIC), and forward traffic based on data-link addresses.
+- Enterprise switches provide many ports and features.
+- Some switches provide Power over Ethernet (PoE).
+- Multilayer switches also include routing functionality.
 
-Managed switches
-VLAN Support
-- Interconnect with other switched via 802.1Q
-Traffic prioritization
-- Voice traffic gets a higher prioority
-Redundancy support
-- Maintain uptime if a switch fails
-Port mirroring
-- Capture packets
-External management
-- Simple Network Management Protocol (SNMP)
+#### Unmanaged switches
 
-Access Poitn
-Not a wireless router
-- A wireless router is a router and an access point in a single device
-An access point is a bridge
-- Extends the wired network onto the wireless network
-- Makes forwarding decisions based on MAC address
+- Offer few configuration options and are generally plug-and-play.
+- Use a fixed configuration and typically do not support VLANs or management protocols.
+- Cost less because they provide fewer features.
 
-Cable Infrastructure
-Punch down block
+#### Managed switches
 
-Patch Panel
-Combination of punch down blocks and RJ-45 connectors
-Runs from desk are made once
-- Permanently punch down to patch panel
-Patch panel to switch can be easily changed
-- No special tools 
-- Use existing cbales
+- Support VLANs and inter-switch connections using 802.1Q.
+- Prioritize traffic, such as giving voice traffic higher priority.
+- Support redundancy to maintain uptime if a switch fails.
+- Provide port mirroring to capture packets.
+- Can be managed externally using the Simple Network Management Protocol (SNMP).
 
-Firewalls
- Filters traffic by port number
- - OSI layer 4 (TCP/UDP)
- - Some firwalls can filter based on the application in use
- Can encrypt traffic into/out of the network
- - Protect you traffic between sites
- Can proxy traffic
- - A common security technique
- Most firewalls can be layer 3 devices (routers)
- - Usually sits on the ingress/egress of the network
+### Access points
 
- Power over Ethernet (PoE)
- Power provided on an Ethernet cable
- - One wire for both network and electricity
- - Phones, cameras, wireless access points
- - Useful in difficult to power areas
- Power provided at the switch
- - Built in power - Endspans
- - In line power injector - Midspans
- - Commonly marked on the switch or interface
- - The original PoE specification
- - 15.4 watts DC power, 350 mA max current
- PoE+
- - 25.5 watts DC power, 600mA
- PoE++
- - 51 W(Type 3), 600 mA
- - 71.3 W (Type 4), 960 mA 
- - PoE with 10GBASE-T
- Compare the device with the switch support
- - PoE+ won't power a PoE++ device
- 
- Cable modem
- Broadband 
- - Transmission across multiple frequencies
- - Different traffic types
- Data on the "cable" network
- - DOCSIS (Data over Cable Service Interface Specification)
- High speed networking
- - Speeds up to 1 Gig are common
- Multiple services
- - Data, voice, video
+An access point is a bridge, not a router.
+- A wireless router combines a router and an access point in one device.
+- An access point extends a wired network to wireless devices and forwards traffic based on MAC addresses.
 
- DSL modem (Digital Subscriber Line)
- - uses telephone lines
- Download speed is faster than the upload speed (asymmetric)
- - 200Mbits/s downstream /20Mbits/s upstream are common
- - ~10,000 foot limitation from the central office (CL)
- - Faster speeds may be possible if closer t the CO
+### Cabling infrastructure
 
- ONT (Optical Network terminal)
- - Fiber to the premises
- Connect the ISP fiber network to the copper network
- - Demaraction point (DEMARC) in the data center
- - Terinal box on the side of the building
- Line of responsibily
- - One side of the box is the ISp
- - Other side of the box is your network
+A punch-down block connects wires directly. A patch panel combines punch-down blocks with RJ-45 connectors.
+- Desk cables are punched down to the patch panel once.
+- Connections between the patch panel and switch can be changed without special tools by using existing cables.
 
-Network Interface Card (NIC)
-The fundamental network device
-- Every device on the network has a NIC
-- Computers, server, printer, routers, switches, phones
-Specific to the network type
-- Ethernet , WAN , wireless,
-Often built in to the moterboard
-- Or added as an extension card
-Contains the hardware address
-- Media Access Control (MAC) address
-- A unique hardware designation
+### Firewalls
 
+- Filter traffic by port number at OSI layer 4 (TCP/UDP); some can also filter by application.
+- Encrypt traffic entering or leaving the network to protect communications between sites.
+- Proxy traffic as a common security measure.
+- Often operate as layer 3 devices (routers) at the network ingress or egress.
+
+### Power over Ethernet (PoE)
+
+PoE supplies power over an Ethernet cable, so one cable carries both network data and power.
+- Commonly powers phones, cameras, and wireless access points.
+- Useful in areas where it is difficult to provide power.
+- Power can come from a switch (an endspan) or an in-line injector (a midspan).
+- PoE capability is commonly marked on the switch or interface.
+- The original PoE specification provides 15.4 W of DC power, with a maximum current of 350 mA.
+
+#### PoE+
+
+- Provides up to 25.5 W of DC power at 600 mA.
+
+#### PoE++
+
+- Provides 51 W (Type 3) at 600 mA or 71.3 W (Type 4) at 960 mA.
+- Supports PoE with 10GBASE-T.
+- Check the device's requirements against the switch's capabilities; PoE+ will not power a PoE++ device.
+
+### Cable modems
+
+Cable modems provide broadband service over multiple frequencies and traffic types using DOCSIS (Data Over Cable Service Interface Specification).
+- Speeds up to 1 Gbit/s are common.
+- Cable connections can carry data, voice, and video.
+
+### DSL modems
+
+Digital Subscriber Line (DSL) modems use telephone lines. Asymmetric services provide faster download than upload speeds.
+- 200 Mbit/s downstream and 20 Mbit/s upstream are common.
+- Service is limited to approximately 10,000 feet from the central office (CO); higher speeds may be possible closer to the CO.
+
+### Optical network terminals (ONTs)
+
+An ONT connects an ISP's fiber network to a customer's copper network.
+- The demarcation point (DEMARC) may be in a data center or at a terminal box on the building.
+- The ISP is responsible for one side of the demarcation point; the customer network is on the other side.
+
+### Network interface cards (NICs)
+
+A NIC is the fundamental network interface in a device.
+- Computers, servers, printers, routers, switches, and phones use NICs.
+- NICs are specific to a network type, such as Ethernet, WAN, or wireless.
+- A NIC is often built into the motherboard or added as an expansion card.
+- It contains a hardware address called the Media Access Control (MAC) address, a unique hardware identifier.
+
+---
 
 ## IPv4 and IPv6
-
 
 IP addressing
 - IPv4 is the primary protocol for everything we do
@@ -496,16 +375,16 @@ IPv4 addresses
 - OSI Layer 3 address
 
 Public IPv4 addresses
-Each IPv4 address on the internet in unique
+Each IPv4 address on the internet is unique.
 - 1.1.1.1 can communicate to 2.2.2.2
 It is estimated that there are over 20 billion devices connected to the internet (and growing)
-- IPv4 supports around 4.29 billion adddresses
+- IPv4 supports around 4.29 billion addresses.
 - There's an obvious scalability issue
 We have found ways to manage the demand
-- Network Address translation (NAT)
+- Network Address Translation (NAT)
 
 Private IP Address ranges
-Large private Ip address ranges
+Large private IP address ranges
 - Properly design and scale large networks
 Private IP addresses are not internet routable
 - But can be routed internally
@@ -514,7 +393,7 @@ Defined in RFC 1918
 - Request for Comment
 
 IPv6 Addresses
-Internet Protocol v6 - 128 bit address
+Internet Protocol version 6 (IPv6) uses 128-bit addresses.
 - 340 undecillion addresses
 - 6.8 billion people could have many addresses
 - hexadecimal instead of decimal
@@ -523,28 +402,26 @@ Your DNS is very important!
 First 64 bits is generally the network prefix (/64)
 Last 64 bits is then the host network address
 
+---
 
-## Assiging IP Addresses
+## Assigning IP Addresses
 
+Networking with IPv4
 
-Netwroking with IPv4
-
-IP address, ex. 192.168.1.1.65
+Example IP address: 192.168.1.65
 - Every device needs a unique IP address
 
-Subnet Mask 255.255.255.0
+Subnet mask: 255.255.255.0
 - Used by the local device to determine what subnet it's on
-    The subnet mask isn't (usually) transmitted across the network  
-    You'll asak for the subnet mask all the time
-        What's the subnet mask of your network?
+The subnet mask usually isn't transmitted across the network. You'll often need to ask for it: "What's the subnet mask of your network?"
 
-Default gateway 192.168.1.1
+Default gateway: 192.168.1.1
 - The router that allows you to communicate outside of your local subnet
-- The default gateway must be an IP address on the locla subnet
+- The default gateway must be an IP address on the local subnet.
 
 Static IP addressing
 
-An IP address that doesn't change 
+An IP address that doesn't change
 - Without some type of configuration change
 
 Manually configure the IP address
@@ -564,8 +441,8 @@ An IPv4 link-local address
 - No forwarding by routers
 
 APIPA
-169.254.0.0. - 169.254.255.255
-- First and last 256 addresses are reversed
+169.254.0.0 to 169.254.255.255
+- The first and last 256 addresses are reserved.
 - Functional block of 169.254.1.0 - 169.254.254.255
 - DHCP is not responding
 
@@ -573,8 +450,8 @@ Randomly assigned in this block
 - Uses ARP to confirm the address isn't currently in use
 
 Turning dynamic into static
-DHCP assigns an IP address from the available from a large pool of addesses
-- Your IP address will occasionaly change
+DHCP assigns an IP address from a large pool of available addresses.
+- Your IP address may change occasionally.
 
 You may not want your IP address to change
 - Server, printer, or personal preference
@@ -586,181 +463,129 @@ Disable DHCP on the device
 Better: Configure an IP reservation on the DHCP server
 - Associate a specific MAC address with an IP address
 
-
+---
 
 ## Internet Connection Types
 
+---
+
 ## Satellite Networking
 
-Communication to a satellite
-- Non-terrestrial communication
+Satellite networking provides non-terrestrial communication.
 
-High cost relative to terrestrial networking
-- 100Mbits/s down, 5Mbits/s up are common
-- Remote sites, difficult to network sites
+It is expensive relative to terrestrial networking.
+- 100 Mbit/s down and 5 Mbit/s up are common.
+- It can serve remote or difficult-to-network sites.
 
-Relatively high latecy
-- Some systems have 250 ms up, 250ms down 
+Satellite connections have relatively high latency.
+- Some systems have 250 ms up and 250 ms down.
 - Starlink advertises 25 to 60 ms
 
-Not always a perfect option
-- Line of sight, rain fade
+Satellite service is not always ideal because it requires line of sight and can be affected by rain fade.
+
+---
 
 ## Fiber
 
-High speed data communication
-- Frequencies of light
+Fiber carries high-speed data using light.
 
 Higher installation cost than copper
 - Equipment is more costly
 - More difficult to repair
 - Communication over long distances
 
-Large installation in the WAN core
-- Supports very high data rates
-- SONET, wavelength division multiplexing
+Fiber is widely installed in WAN cores.
+- Supports very high data rates, including SONET and wavelength-division multiplexing.
 
-Fiber has appeared at the premises
-- Business and home use
+Fiber is also available at business and residential premises.
+
+---
 
 ## Cable
 
-Broadband
-- Transmission across multiple frequencies
-- Different traffic types
+Cable provides broadband service by transmitting data across multiple frequencies and traffic types.
 
-Data on the "cable" network
-- DOCSIS (data over cable service interface specification)
+Cable networks use DOCSIS (Data Over Cable Service Interface Specification).
 
-High-speed networking
-- 50Mbits/s through 1,00+Mbits/s are common
+Speeds from 50 Mbit/s to more than 1,000 Mbit/s are common.
+
+---
 
 ## DSL
 
-ADSL (asymmetric digital subscriber line)
-- Uses telephone lines
+Asymmetric Digital Subscriber Line (ADSL) uses telephone lines.
 
-Download speed is faster than the upload speed (asymmetric)
-- 200 Mbit/s downstream / 20 Mbit/s upstream are common
+Download speeds are faster than upload speeds.
+- 200 Mbit/s downstream and 20 Mbit/s upstream are common.
 - ~10,000 foot limitation from the central office (CO)
 - Faster speeds may be possible if closer to the CO
 
+---
+
 ## Cellular Networks
 
-Mobile devices 
-- "Cell" phones
+Mobile devices, including cell phones, connect through cellular networks.
 
-Seperate land into "cells"
-- Antenna covers a cell with certain frequencies
+Networks divide geographic areas into cells, each served by an antenna using assigned frequencies.
 
-Tethering
-- Turn your phone into a wireless router
+Tethering turns a phone into a wireless router.
 
-Mobile Hotspot
-- Standalone devices
-- Uses your phone for other things
+Mobile hotspots can be standalone devices or phones that provide network access to other devices.
+
+---
 
 ## WISP
 
-Wireless Internet Service Provider
-- terrestrial internet access using wireless
+Wireless Internet Service Providers (WISPs) provide terrestrial internet access wirelessly.
 
-Connect rural or remote locations
-- Internet access for everyone
+They can connect rural or remote locations.
 
 Many different deployment technologies
 - Meshed 802.11
 - 5G home internet
 - Proprietary wireless
 
-Need an outdooe antenna
-- Speeds ~10Mbits/s to 1,00 megabits per second
+An outdoor antenna is required.
+- Speeds range from about 10 Mbit/s to 1,000 Mbit/s.
 
-
-
+---
 
 ## Network Types
 
+### LAN (local area network)
 
-LAN
+A LAN connects devices within a limited area, such as a building or group of buildings.
+- Common technologies include Ethernet and 802.11 wireless networking.
 
-Local Area Network
-- Local is relative
+### WAN (wide area network)
 
-A building or group of buildings
-- High speed connectivity
+A WAN connects LANs across large distances, potentially across the globe, and is generally slower than a LAN.
+- Technologies include point-to-point serial links, Multiprotocol Label Switching (MPLS), and terrestrial or non-terrestrial links.
 
-Ethernet and 802.11 wireless
-- Any slower and it isn't local
+### PAN (personal area network)
 
-WAN
+A PAN connects a person's nearby devices using technologies such as Bluetooth, infrared (IR), or NFC.
+- Examples include a car's audio system connecting to a phone, a phone connecting to a wireless headset, and health devices reporting workout data.
 
-Wide area network
-- Spanning the globe
+### MAN (metropolitan area network)
 
-Generally connect LANs across a distance
-- And generally much slower than the LAN
+A MAN covers a city and is larger than a LAN but often smaller than a WAN.
+- Metro Ethernet is a common MAN technology.
+- Governments often own the right-of-way used by MAN infrastructure.
 
-Many different WAN technologies
-- Point to point serial, Multiprotocol Label Switching (MPLS), 
-- Terrestrial and non terrestrial
+### SAN (storage area network)
 
-PAN
+A SAN provides efficient block-level access to storage and can appear to a system like local storage.
+- SANs require substantial bandwidth and may use an isolated, high-speed network.
 
-Personal Area Network
-- Your own private network
-- Bluetooth, IR, NFC
+### WLAN (wireless local area network)
 
-Automobile
-- Auto output
-- Integrate with phone
+A WLAN provides 802.11 wireless connectivity within a building or other limited area.
+- Add access points to expand coverage across a downtown area or large campus.
 
-Mobile phone
-- Wireless headset
-
-Health
-- Workout telemetry, daily reports
-
-MAN
-
-Metropolotian Area Network
-- A network in your city
-- Larger than a LAN, often smaller than a WAN
-
-Historically MAN specific topologies
-- Metro Ethernet
-
-Common to see government ownership
-- They "own" the right of way
-
-SAN
-
-Storage Area Network
-- Looks and feels like a local storage device
-- Block-level access
-- Very efficient reading and writing
-
-Require a lot of bandwidth
-- may use an isolated network and high speed network technologies
-
-WLAN
-
-Wireless LAN
-- 802.11 Technologies
-
-Mobility
-- Within a building
-- In alimited geographical area
-
-Expand the coverage wth additonal access points
-- Downtown area
-- Large campus
-
-
-
+---
 
 ## Network Tools
-
 
 Cable Crimpers
 
@@ -768,15 +593,15 @@ Cable Crimpers
 - Coaxial, twisted pair, fiber
 
 Connect the modular connector to the Ethernet cable
-- The final step of the process 
+- The final step of the process
 
-Metal pronsg are pushed through the insulation
+Metal prongs are pushed through the insulation.
 - The plug is also permanently pressed onto the cable sheath
 
 Crimping best practices
 
 Get a good crimper
-- And a good pair of electrician's scissors / Cable snips
+- A good pair of electrician's scissors or cable snips
 - And a good wire stripper
 
 Make sure you use the correct modular connectors
@@ -785,14 +610,14 @@ Make sure you use the correct modular connectors
 Practice, practice, practice
 - It won't take long to become proficient
 
-WiFi Analyzer
+Wi-Fi analyzer
 
-Hardware base WiFi analyzer
+Hardware-based Wi-Fi analyzer
 - Avoids operating systems limitations
 - View all of the 802.11 information in the air
 
-View WiFi information
-- Frequencies/ channels, signal strength, access points, interference, wireless devices
+View Wi-Fi information
+- Frequencies and channels, signal strength, access points, interference, and wireless devices
 
 Get frequency information from a spectrum analyzer
 - Useful when many different devices are part of the bigger picture
@@ -804,14 +629,13 @@ Tone probe
 - Follow the tone
 
 Tone generator
-- Puts an anolog sound on the wire
+- Puts an analog sound on the wire
 
 Inductive probe
-- Doesn;t need to touch the copper
-- Hear through a small speaker
+- Doesn't need to touch the copper
+- Hear the tone through a small speaker
 
-Easy wire tracing
-- Even in complex enviroments
+Easy wire tracing, even in complex environments
 
 Connect the tone generator to the wire
 - Modular jack
@@ -824,17 +648,17 @@ Use the probe to locate the sound
 Punch down tool
 
 "Punch" a wire into a wiring block
-- 66 block, 110 block, and Krones, others
+- 66 block, 110 block, Krone block, and others
 
 Can be tedious
 - Every wire must be individually punched
 
 Trims the wires during the punch
-- Very effiecient process
+- Very efficient process
 
 Organization is key
 - Lots of wires
-- Cable management 
+- Cable management
 
 Maintain your twists
 - Your category 6A cable will thank you later
@@ -850,7 +674,7 @@ Relatively simple
 - Continuity test
 - A simple wire map
 
-Can Identify missing pins
+Can identify missing pins
 - Or crossed wires
 
 Not usually used for frequency testing
@@ -859,9 +683,9 @@ Not usually used for frequency testing
 Loopback plugs
 
 Useful for testing physical ports
-- or fooling your applications
+- Or fooling your applications
 
-Serial / RS-232 (9 pin or 25 pin)
+Serial / RS-232 (9-pin or 25-pin)
 
 Network connections
 - Ethernet, T1, Fiber
@@ -874,246 +698,185 @@ Intercept network traffic
 - Send a copy to a packet capture device
 
 Physical taps
-- Disconnect the ink, put a tap in the middle
-- Can be an active or assive tap
+- Disconnect the link and insert a tap in the middle.
+- Can be active or passive.
 
 Port mirror
-- Port redirection, SPAN (Switched Port ANalyzer)
-- Software based tap
-- Limited dunctionality, but can work well in a pinch
+- Port redirection, SPAN (Switched Port Analyzer)
+- Software-based tap
+- Limited functionality, but can work well in a pinch
 
-
-
+---
 
 ## Display Types
 
+### LCD (liquid crystal display)
 
-LCD
+An LCD produces an image by controlling how light passes through liquid crystals.
 
-Liquid crystal display
-- Lught shines through liquid crystals
-
-Advantages
+#### Advantages
 - Lightweight
 - Relatively low power
 - Relatively inexpensive
 
-Disadvantages
+#### Disadvantages
 - Black levels are a challenge
-- Requires serperate backlight
-    - Florescent, LED (Light emmiting Diode)
-    - Lights can be difficult to replace
+- Requires a separate backlight.
+  - Fluorescent or LED (light-emitting diode)
+  - Lights can be difficult to replace.
 
-LCD Technologies
+### LCD technologies
 
-TN (Twisted Nematic) LCD
-- The original CD technology
+#### TN (twisted nematic) LCD
+- The original LCD technology
 - Fast response times (gaming!)
-- Poor viewing angles - color shifts
+- Poor viewing angles can cause color shifts.
 
-IPS (In Plane Swithcing) LCD
+#### IPS (in-plane switching) LCD
 - Excellent color representation
 - Can be more expensive to produce than TN
 
-VA (Vertical Alignment) LCD
+#### VA (vertical alignment) LCD
 - A good compromise between TN and IPS
 - Good color representation
 - Often slower response times than TN
 
-OLED 
+### OLED displays
 
-OLED (Organic Light Emitting Diode)
-- Organic compound emits light when recieving an electric current
+OLED (organic light-emitting diode)
+- An organic compound emits light when it receives an electric current.
 
-No backlight-The organic compund provides the light
+No backlight is needed; the organic compound provides the light.
 
 Thinner and lighter
-- Flexible and mobile - no glass needed
+- Flexible and mobile; no glass is needed.
 
-Tablets, phones, smart watches
-- Very accurate color representation 
-- Tends to be a bit higher cost than LCD
+Commonly used in tablets, phones, and smartwatches.
+- Provides accurate color representation.
+- Usually costs more than LCD.
 
-Mini LED
+### Mini-LED displays
 
-Same bcklight technology as a conventional LED-backlight LCD
-- But muuch smaller Light Emitting Diodes(LEDs)
+Uses the same backlight technology as a conventional LED-backlit LCD, but with much smaller light-emitting diodes (LEDs).
 
-Each LCD can be enabled or disabled
-- And color and intensity can be different
+LED backlight zones can be enabled or disabled independently, with different color and intensity levels.
 
-Much better control over dark screen areas
-- Deeper blacks, better color representation
+This provides better control over dark areas, deeper blacks, and improved color representation.
 
-Touchscreen
+### Touchscreens
 
-Merge laptop and tablet input
-- Digitizer responds to touch
-- No keyboard required
-- But often still available
+Touchscreens combine laptop and tablet input.
+- A digitizer responds to touch.
+- A keyboard is not required, but is often still available.
 
-Many options for input
-- Use the best one for the job
+Choose the input method that best suits the task.
 
-Digitizers
+### Digitizers
 
-Use a pen-like device as input
-- Stylus input
-- Useful for graphical input
+Digitizers accept input from a pen-like device, or stylus, and are useful for drawing and other graphical tasks.
 
-Used commonly on laptops/tablets
-- Or hybrid devices
+They are commonly used on laptops, tablets, and hybrid devices.
 
-Backlight and inverter
+### Backlights and inverters
 
-LCD displays needs a backlight 
-- Florescent lamp or LED lights
+LCDs need a backlight, typically a fluorescent lamp or LED.
 
-Some laptops have inverters
-- Turn DC into AC
+Some laptops use an inverter to convert DC to AC power for the backlight.
 
-Verify backlight
-- Look closely
-- Use a flashlight
+To check the backlight, look closely at the display or shine a flashlight on it.
 
-May need to replace the LCD inverter or display
-- Choose carefully
+You may need to replace the LCD inverter or display; check the device documentation before choosing a replacement.
 
-
-
+---
 
 ## Display Attributes
 
+Displays differ in their specifications, options, and settings.
 
-Display Attributes
+Requirements vary by use case, including web browsing, video and photo editing, information displays, and phones.
 
-Not all displays are created equal
-- Various specifications, options, and settings
+Evaluate the technical details to choose a display that meets the requirements.
 
-Requirements can vary
-- Web browsing
-- Video and photo editing
-- Information displays
-- Phones
+### Pixel density
 
-Evaluate all of the technical details
-- Choose the best displays for the requirement
+Pixel density measures how many pixels fit in an inch or centimeter.
 
-Pixel density
+A higher pixel density generally produces a clearer, sharper image.
 
-Measure how many pixels in an inch
-- Or pixels per centimeter
-- Apply a physicla measurement to a display
+Consider how the image will be viewed. Printers, for example, use dots per inch (DPI).
 
-A higher pixel densisty looks better
-- Higher clarity and sharpness
+### Pixel density examples
 
-Consider how the image will be viewd
-- Displays
-- Printers (dots per inch)
+Pixel density is calculated by dividing the number of pixels by the number of inches to get pixels per inch (PPI).
 
-Pixel density comparison
+For a 27-inch (diagonal) 4K display that is 24 inches wide, 3,840 horizontal pixels provide 160 pixels per inch.
 
-Number of pixels / Number of inches
-- Pixels per inch (divided) inch
+For a 65-inch (diagonal) 4K display that is 57 inches wide, 3,840 horizontal pixels provide about 67 pixels per inch.
 
-27 in (diagonal) 4k display
-- 3,840 horizontal pixels / 24 inches wide (not diagonal)
-- 160 pixels
+### Refresh rates and frame rates
 
-65 in (diagonal) 4k display
-- 3,840 horizontal pixels / 57 inches wide
-- 67 pixels per inch
+Displays show a sequence of still images, or frames.
 
-Refresh rates
+Refresh rate is measured in hertz (Hz), or cycles per second. Frame rate is measured in frames per second (FPS).
 
-We are viewing many images shown constecutively
-- A still "frame' or image
+Frame rates vary by media type: movies commonly use 24 fps, television uses 30 fps, and video games often use 60 fps or higher.
 
-Usually measured in hertz (Hz)
-- Number of cycles per second
-- Frames per second (FPS)
+### Choosing a refresh rate
 
-Frame rates may vary
-- Movies 24 fps
-- TV 30 fps
-- Video games 60 fps +
+Higher refresh rates are useful for rapidly moving content, such as video games, sports, and video production.
 
-Refresh rates
+The video adapter or processor, display, and connection determine the maximum refresh rate.
+- HDMI 2.1 supports 4K at 144 Hz.
+- DisplayPort 2.1 supports dual 4K at 144 Hz.
 
-Higher refresh rates are useful for rapidly moving content 
-- Video games, sports events, video production
+### Screen resolution
 
-Maximum refresh rate is determined by the video adapter / processor and the display device
-- The connection between the two is also important
-- HDMI 21. supports 4k at 144hz
-- Display port 2.1 supports dual 4k at 144hz
+Resolution is the number of pixels in the image, expressed as width x height.
 
-Screen resolution 
+More pixels can produce more detailed output, increasing perceived sharpness and clarity.
 
-The number of pixels 
-- Width x height
+Resolutions vary widely; a 16:9 aspect ratio is common.
 
-More pixels means more detailed display output
-- Percieved sharpnedd
-- A clearer view
+### Color gamut
 
-Many standards
-- Resolutions can vary widely
-- 16:9 aspect ratio is common
+A color gamut is the range of colors available on a display or output device. It is smaller than the range visible to the human eye.
 
-Color gamut
+Color gamut is an important display consideration because it affects color representation.
 
-Color gamut
-- The range of colors available on a display or output device
-- This is less than the capabilities of the human eye
+Common standards include sRGB (standard red, green, and blue), Adobe RGB, and International Telecommunication Union (ITU) standards for HDTV.
 
-An important consideration in a display
-- Color representation
-- Range of colors
+### Color coverage
 
-Many standards
-- sRGB - Standard RED GREEN BLUE
-- Adobe RGB
-- International Telecommunication Union (ITU) standards for HDTV
+A display's color coverage can be compared with an established gamut standard and may be included in its specifications.
 
-Color coverage
+Gamut coverage varies widely, and displays with higher coverage percentages tend to cost more.
 
-A display may be compared with an existing color gamut standard
-- Part of the display specifications
+OLED displays provide a wide color gamut and are often among the best for gamut support.
 
-Gamut compatiability can vary widely
-- Higher percentages tend to be more expensive
-
-OLED displays provide a wide color gamut
-- Best in class color gamut support
-
-
-
+---
 
 ## Network Cables
 
+The importance of cables
 
-The importantance of cables
-
-Fundamental to network communication 
+Fundamental to network communication
 - Incredibly important foundation
 
 Usually only get one good opportunity at building your cable infrastructure
-- Make it good !
+- Make it good!
 
-The vast majority of wireless communication uses cables 
+The vast majority of wireless communication uses cables
 - It has to plug in somewhere
 
 Twisted pair copper cabling
 
-Baanced pair operation
+Balanced-pair operation
 - Two wires with equal and opposite signals
-- Trnasmit +, Transmit - / Recieve +, Recieve -
+- Transmit +, transmit - / receive +, receive -
 
 The twist is the secret
 - Keeps a single wire constantly moving away from the interface
-- The opposite signals are compare on the other end
+- The opposite signals are compared at the other end.
 
 Pairs in the same cable have different twist rates
 
@@ -1123,21 +886,21 @@ Cable categories
 Electrical signals are sent over copper cable
 - The signal encoding determines the data transfer rate
 
-A cable must be manufactureed to specific standards
+A cable must be manufactured to specific standards.
 - IEEE 802.3 Ethernet standards determine the cable type
 
-Cable standards are described as a "category" of cable 
+Cable standards are described as a "category" of cable.
 - Category 5e, Category 6a
 - Check the IEEE standard to determine the minimum cable category
-- The minimum cable category for 1000BASE - T is category 5
+- The minimum cable category for 1000BASE-T is Category 5e.
 
 ### Copper Cable Categories
 
 | Ethernet standard | Minimum cable category | Maximum supported distance |
-| --- | --- | --- |
-| 1000BASE-T | Category 5e | 100 m |
-| 10GBASE-T | Category 6 | 55 m |
-| 10GBASE-T | Category 6A | 100 m |
+| ----------------- | ---------------------- | -------------------------- |
+| 1000BASE-T        | Category 5e            | 100 m                      |
+| 10GBASE-T         | Category 6             | 55 m                       |
+| 10GBASE-T         | Category 6A            | 100 m                      |
 
 Coaxial cables
 
@@ -1145,16 +908,16 @@ Two or more forms share a common axis
 - The inner conductor and the outer shield
 
 RG-6 used in TV/digital cable
-- And high-speed internet over cbale
+- Also used for high-speed internet over cable
 
 Unshielded and shielded cable
 
 UTP (Unshielded Twisted Pair)
-- No additional shielding 
+- No additional shielding
 - The most common twisted pair cabling
 
 STP (Shielded Twisted Pair)
-- Additonal shielding protects against interference
+- Additional shielding protects against interference
 - Shield each pair and/or the overall cable
 - Requires the cable to be grounded
 
@@ -1177,8 +940,8 @@ Provides protection from the elements
 - Often filled with gel to repel water
 - Conduit may not be needed
 
-Shieled twisted pair
-- Provides frounding
+Shielded twisted pair
+- Provides grounding
 - Adds strength
 - Protects against signal interference
 
@@ -1188,492 +951,364 @@ Plenum space
 - Building air circulation
 - Heating and AC system
 
-Concerns in the case of a fire
-- Smoke and toxic fumes
-- Need a cable type for a plenum
+Smoke and toxic fumes are a concern during a fire, so plenum spaces require appropriately rated cable.
 
-Plenum-rated cable
+### Plenum-rated cable
 
-traditional cable jacket
-- Polyvinyl chloride (PVC)
+A traditional cable jacket is made of polyvinyl chloride (PVC).
 
-Fire rated cable jacket
-- Fluorinated ethylene polymer (FEP) or low smoke ppolyvinyl chloride (PVC)
+A fire-rated jacket may use fluorinated ethylene polymer (FEP) or low-smoke polyvinyl chloride (PVC).
 
-Plenum rated cable may not be as flexible
-- May not have the same bend radius
+Plenum-rated cable may be less flexible and may have a different bend radius.
 
-Worst case planning
-- Important concerns for any structure
+Plan for worst-case conditions when selecting cable for a structure.
 
-
-
+---
 
 ## 568A and 568B Colors
 
+### Structured cabling standards
 
-Structured cabling standards
+The international ISO/IEC 11801 standard defines classes of cabling.
 
-International ISO/IEC 11801 cabling standards
-- Defines classes of networking standards
+The Telecommunications Industry Association (TIA) develops standards and supports the industry through market analysis, trade shows, and government affairs.
+- ANSI/TIA-568 is the Commercial Building Telecommunications Cabling Standard.
+- TIA website: <http://www.tiaonline.org>
 
-Telecommunications Industrial Association (TIA) 
-- Standards, market analysis, trade shows, government affairs, etc.
-- ANSI/TIA-568: Commercial Building
-Telecommunications Cabling Standard
-- http://www.tiaonline.org
+T568A and T568B specify pin and pair assignments for eight-conductor, 100-ohm balanced twisted-pair cabling.
 
-Commonly referenced for pin and pair assigments of eight conductor 100 ohm balanced twisted pair cabling 
-- T568A and T568B
+### T568A and T568B termination
 
-T568A and T568B termination
+The T568B standard defines pin assignments for eight-conductor, 100-ohm balanced twisted-pair cabling.
 
-Pin assignments from T568B standard
-- Eight conductor 100ohm balanced twisted pair cabling
+T568A and T568B use different pin assignments for an 8P8C connector, so their color sequences differ slightly.
 
-T568A and T568B are different pin assignments for 8P8C connector
-- The colors are slighly different between the two
+Many organizations traditionally use T568B, which can make it difficult to change standards midstream.
 
-Many organizations traditionally use 568B
-- Difficult to change in mid stream
+Do not terminate one end of a cable with T568A and the other with T568B; that is not the definition of a Gigabit Ethernet crossover cable.
 
-You shouldn't terminate one side of the cable with T568A and the other with T568B
-- this has never been the definition of a Gigabit Ethernet crossover cable
-
-
-
+---
 
 ## Optical Fiber
 
+### Fiber communication
 
-Fiber communication
+Fiber transmits data using light, typically in the visible or infrared spectrum.
 
-Transmition by light
-- The visible spectrum
+Fiber does not carry an RF signal, making it difficult to monitor or tap.
 
-No RF signal
-- Very difficult to monitor or tap
+The signal degrades slowly, allowing transmission over long distances.
 
-Signal slow to degrade
-- Transmission over long distance
+Fiber is immune to radio-frequency interference because it does not use RF signals.
 
-Immune to radio interference
-- There is no RF
+### Multimode fiber
 
-Multimode fiber
+Multimode fiber is used for short-range communication, typically up to 2 km.
 
-Short range communication
-- Up to 2km
+It uses a relatively inexpensive light source, such as an LED.
 
-Relatively inexpensive light source
-- LED
+### Single-mode fiber
 
-Single mode fiber
+Single-mode fiber is used for long-range communication, up to 100 km without processing.
 
-Long range commmunication
-- Up to 100km without processing
+It uses a more expensive light source, commonly a laser.
 
-Expensive light source
-- Commonly uses lasers
-
-
-
+---
 
 ## Peripheral Cables
 
+### USB (Universal Serial Bus)
 
-USB (Universal Serial Bus)
+USB simplifies connections for printers, storage devices, keyboards, mice, and other peripherals.
 
-Simplify connections
-- Printers, storage devices, keyboards, mouse
+#### USB 1.1
+- Low speed: 1.5 Mbit/s, up to 3 m
+- Full speed: 12 Mbit/s, up to 5 m
 
-USB 1.1
-- Low speed: 1.5 megabits per second, 3 meters
-- Full speed: 12 megabits per second, 5 meters
+#### USB 2.0
+- Up to 480 Mbit/s, with a maximum cable length of 5 m
 
-USB 2.0
-- 480 megabits per second, 5 meters
+#### USB 3.0
+- SuperSpeed, up to 5 Gbit/s
+- The standard does not specify a cable length.
 
-USB 3.0
-- Superspeed
-- 5 gigabits per second ~3meters
-- Standard does not specify a cable length
+#### USB 3.1
+- Up to 10 Gbit/s
 
-USB 3.1 
-- Max of 10 gigabits per second
+#### USB 3.2
+- Up to 20 Gbit/s
 
-USB 3.2
-- Max of 20 gigabits per second
+#### USB-C
 
-USB - C 
+USB has had many different connectors over time.
 
-USB has a lot of different connectors
-- And they have changed over time
+USB-A can be awkward to connect; it may take more than one attempt.
 
-Can be annoying to connect USB - A
-- Third time's the charm
+USB-C is a newer connector intended to replace several older connector types.
 
-USB-C replaces all of these
-- One connector to rule them all
+USB-C describes the physical connector, not the signal or protocol it carries.
 
-USB-C describes the physical connector
-- It doesn't describe the signal
+### Serial cables
 
-Serial cables
+D-subminiature (D-sub) connectors are commonly used for serial connections. The letter refers to the connector size.
 
-D-subminiature or D-sub
-- The letter refers to the connector size
+RS-232 (Recommended Standard 232) is an industry standard dating to 1969.
 
-Commonly used for RS-232
-- Recommended standard 232
-- An industry standard since 1969
+Serial communication was developed for modems and is also used with printers, mice, and network devices.
 
-Serial Communications Standard
-- Built for modem communication
-- Used for modems, printers, mice, networking 
+Connect directly to a device using a serial connection, such as a DB-9 connector, RJ-45 serial port, or USB connection.
 
-Directly connect to the device
-- Traditionally a serial connection
-- DB-9 connector, RJ45 serial, USB connection
+When other connection methods fail, a device may still provide a text-based serial console.
 
-When all else fails
-- The console will be available
+This requires a serial or USB connection; a USB-to-DB-9 serial adapter may be needed.
 
-A text based serial interface
+### Thunderbolt
 
-Requires a serial or USB connection
-- May need a USB to DB9 serial adapter
+Thunderbolt is a high-speed serial interface that carries data and power over the same cable. Early versions used the Mini DisplayPort (MDP) connector.
 
-Thunderbolt
-
-High speed serial connector
-- Data and power on the same cable
-- Based on Mini DispayPort (MDP) standard
-
-Thunderbolt 1
+#### Thunderbolt 1
 - Two channels
-- 10 Gbits/ per channle
-- 20 Gigabits/ total throughput
+- 10 Gbit/s per channel
+- 20 Gbit/s total throughput
 - Mini DisplayPort connector
 
-Thunderbolt 2
-- 20 Gigbits/ aggregated channels
-- Mini DispayPort connector
+#### Thunderbolt 2
+- 20 Gbit/s across the aggregated channels
+- Mini DisplayPort connector
 
-Thunderbolt 3
-- 40 Gigabits/ aggregated throughput
-- USB - C connector
+#### Thunderbolt 3
+- 40 Gbit/s aggregated throughput
+- USB-C connector
 
-Max 3 m (copper)
-- 60 meters (optical)
-- Daisy chain up to 6 devices
+Maximum cable lengths are 3 m for copper and 60 m for optical.
+- Daisy-chain up to six devices.
 
-Thunderbolt 4
-- 40 Gigabits/ aggregated throughput
-- Support for dual 4k displays
+#### Thunderbolt 4
+- 40 Gbit/s aggregated throughput
+- Supports dual 4K displays
 - Increased PCIe bandwidth
 
-
+---
 
 ## Video Cables
 
+### HDMI (High-Definition Multimedia Interface)
 
-HDMI (High Definition Multimeedia Interface)
+HDMI carries digital video and audio. Signal quality may degrade over distances of approximately 20 m.
 
-Video and audio stream
-- All digital, no analog
-- ~20 m distance before losing too much signal
+The 19-pin Type A connector is one of the most common video connectors.
 
-19-pin (TYPE A) connector
-- One of the most common video connector types
+### DisplayPort
 
-Display Port
+DisplayPort sends digital information in packets, like Ethernet and PCI Express, and carries both audio and video.
 
-Digital information sent in packetized form
-- Like ethernet and PCI Express
-- Carries both audio and video
+DisplayPort is compatible with HDMI and DVI when used with the appropriate adapter.
+- Passive adapters can connect DisplayPort to HDMI or DVI when the interfaces are compatible.
 
-Compatible with HDMI and DVI
-- Passive adapter(needed)
-- Display Port -> HDMI
-- Display Port-> DVI
+Full-size DisplayPort connectors may have a locking mechanism. Unlock it before disconnecting the cable.
 
-Full size interface may include a locking mechanism
-- Don't pull without unlocking
+### DVI (Digital Visual Interface)
 
-DVI (Digital Visual Interface)
+Single-link and dual-link DVI support different resolutions and refresh rates.
+- Single link: 3.7 Gbps (1920 x 1200 at 60 Hz)
+- Dual link: 7.4 Gbps (2560 x 1600 at 85 Hz)
+- DVI does not carry audio.
 
-Single and dual link video
-- Single link; 3.7 Gbps (1920 x 1200 at 60 Hz)
-- Dual link; 7.4 Gbps (2560 x 1600 at 85 Hz)
-- No audio support
-
-DVI-A
+#### DVI-A
 - Analog signals
 - Backward compatibility with VGA
 
-DVI-D
+#### DVI-D
 - Digital signals
 
-DVI-I
-- Integrated - Digitial and analog in the same connector
+#### DVI-I
+- Integrated digital and analog signals in the same connector
 
-VGA (Video Graphics Array)
+### VGA (Video Graphics Array)
 
 DB-15 connector
 - More accurately called DE-15
 
-Blue Color
-- PC System Design Guide
+The connector is usually blue, as specified by the PC System Design Guide.
 
-Video only
-- No audio signal
+VGA carries video only and does not transmit audio.
 
-Analog signal
-- No digital
-- Image degrades after 5-10m
+VGA uses an analog signal, not a digital one. Image quality can degrade over 5 to 10 m of cable.
 
-USB-C 
+### USB-C video
 
-A connector 
-- Not a protocol
+USB-C is a connector, not a protocol.
 
-Many uses for USB-C
-- Power
-- USB data
-- Thunderbolt data
-- Displayport video
-- HDMI video (not common)
-- Mobile high definition link (MHL)
+USB-C can carry power and several types of data or video signals:
+- USB data, Thunderbolt data, and DisplayPort video
+- HDMI video (less common) and Mobile High-Definition Link (MHL)
 
-
-
-
-
+---
 
 ## Storage Cables
 
+### SATA (Serial AT Attachment)
 
-SATA (Serial AT Attachment)
+#### SATA revision 1.0
+- 1.5 Gbit/s
 
-SATA Revision 1.0
-- 1.5 Gbits
+#### SATA revision 2.0
+- 3.0 Gbit/s
 
-SATA Revision 2.0 
-- 3.0 Gbits
+#### SATA revision 3.0
+- 6.0 Gbit/s
 
-SATA Revision 3.0 
-- 6.0 Gbits
+#### SATA revision 3.2
+- 16 Gbit/s
 
-SATA Revision 3.2 
-- 16 Gbits
-
-eSATA (external SATA)
+### eSATA (external SATA)
 - Matches the SATA version
 - 2 meters
 
-Power (15pins) Data(7pins)
-One power cable and data cable per device
+### SATA power and data connectors
+
+Each device uses one 15-pin power cable and one 7-pin data cable.
 - One-to-one
 
-eSATA Cable
+### eSATA cables
 
-External device connections
-- Uses the SATA connector
+eSATA connects external devices using a SATA-based connector.
 
-SATA is usually on the outside of the computer and the eSATA is usually on the inside of the computer
+SATA is usually inside the computer; eSATA is designed for external connections.
 
-
-
-
-
+---
 
 ## Adapters and Converters
 
+Adapters and converters connect devices with different interfaces or convert between formats.
 
-Adapters and converters
+An adapter may be needed when the available connections do not match.
 
-The best laid plans
-- Need an adapter
+Adapters can connect different, electrically compatible connectors.
 
-Convert between different connectors
-- Electrically compatible
+Converters change one format into another, such as USB to Ethernet.
 
-Convert from one format to another
-- You need Ethernet but you only have USB
+An adapter or converter can be a temporary or permanent solution.
 
-A good temporary fix
-- Or a good permanent one
+### DVI to HDMI
 
-DVI to HDMI
-
-DVI-D and HDMI aare electrically compatible
+DVI-D and HDMI are electrically compatible.
 - HDMI is backward compatible with DVI-D
 - No signal conversion required
 - No loss of video quality
 
-DVI to VGA
+### DVI to VGA
 
 DVI-A includes analog signals
-- Backwards compatible with VGA
-- Only 640 x 480 is offically supported
+- Backward-compatible with VGA.
+- Only 640 x 480 is officially supported.
 
-May only need an adapter
-- Analog to analog
+An adapter may be sufficient for analog-to-analog conversion.
 
-VGA to DVI digital will need a converter
-- Check you interface specifications
+VGA to DVI-D requires a converter.
+- Check your interface specifications.
 
 USB to Ethernet
 
-Some laptops don't have a wired ethernet interface
-- Converts USB to Ethernet
+Some laptops don't have a wired Ethernet interface.
+- A USB-to-Ethernet adapter provides one.
 
-USB-C to USB-A
+### USB-C to USB-A
 
-Merge the newwith the old
-- Use your old peripherals
+An adapter lets newer USB-C devices use older USB-A peripherals.
 
-USB hub
+### USB hubs
 
-Connect many devices
-- High speed USB connectivity
+USB hubs connect multiple devices and provide high-speed USB connectivity.
 
-
-
-
+---
 
 ## Copper Connectors
 
+### RJ11 connector
 
-RJ11 connector
+RJ11 is a 6P2C connector (six positions and two conductors), although some cables include additional conductors.
 
-6P2C (6 positions and 2 conductors)
-- Some cables will wire additional conductors
+It is commonly used for telephone and DSL connections.
 
-Telephone or DSL connections
+### RJ45 connector
 
-RJ45 connector 
+RJ45 stands for Registered Jack type 45.
 
-Registers Jack type 45
+It is an 8P8C modular connector (eight positions and eight conductors) commonly used for Ethernet.
 
-8P8C (8 position 8 conductors)
-- Modular connector
-- Ethernet
+### F connector
 
-F-connector
+The F connector is a threaded connector used with coaxial cable.
 
-Coax cable
-- Threaded connector
+It is commonly used for cable television and cable modems that use DOCSIS (Data Over Cable Service Interface Specification).
 
-Cable TV
-- Cable modem
-- DOCSIS (Data Over Cable Service Interface Specification)
+### Punch-down blocks
 
-Punchdown block
+A punch-down block acts as a wire-to-wire patch panel without an intermediate interface.
 
-Wire-to-wire patch panel
-- No intermediate interface required
+Wires are punched into the block, where a connecting block sits on top.
 
-Wires are "punched" into the block
-- Connecting block is on top
+Additional wires can be punched into the connecting block to join the top and bottom wiring.
 
-Additional wires punched into connecting block
-- Patch the top to the bottom
+### USB-C
 
-USB - C
+USB-C is a 24-pin, double-sided connector used by both hosts and devices.
 
-24 pin double sided USB connector
-- Used for both hosts and devices
+It can carry USB or Thunderbolt signals; the connector is the same, but the signal can differ.
 
-Used for USB, Thubderbolt
-- Interface is the same, signal can vary
+### Molex connector
 
-Molex connector
+The 4-pin Molex connector is a peripheral power connector originally created by Molex Connector Company. AMP Mate-N-Lok is another name associated with this connector.
+- Provides +12 V and +5 V.
 
-4 pin peripheral power connector
-- Originally created by Molex Connector Company
-- AMP Mate n lok
-- Provides +12 V and +5 V
+It powers devices inside a computer case, including fans and storage drives.
 
-power for many devices in the computer case
-- Fans
-- Storage drives
+### Lightning connector
 
-Lighting
+Lightning is Apple's proprietary 8-pin digital connector, used by some iPhone, iPad, and iPod devices.
 
-Apple proprietary
-- 8 pin didgital signal
-- Iphone, Ipad, Ipod devices
+Compared with Micro USB, Lightning can provide higher power output for phones and tablets and can be inserted in either orientation.
 
-Some advantages over Micro USB
-- Higher power output for phones and tablets
-- Can be inserted either way
+### DB-9 connector
 
-DB-9
+DB-9 is a D-subminiature (D-sub) connector. The letter refers to the connector size.
 
-D0subminiature or D-sub
-- The letter refers to the connector size
+It is commonly used for RS-232 (Recommended Standard 232), an industry standard since 1969.
 
-Commonly used for RS232
-- Recommended Standard 232
-- An industry standard since 1969
+Serial communication was developed for modems and is also used with printers, mice, and networking equipment.
 
-Serial communications standards
-- Built for modem communication
-- Used for modems, printers, mice, networking
+DB-9 connectors are now often used as management or console ports.
 
-Now used as a configuration port
-- Management or console port
-
-
-
-
+---
 
 ## Fiber Connectors
 
+### ST (Straight Tip)
 
-ST - Straight Tip
+ST is a bayonet-style connector that attaches with a push and twist.
 
-Bayonet connector 
-- Stick and twist
+Push it on and turn it to lock; turn it in the opposite direction to unlock.
 
-Push on and turn
-- Locks in lace
-- Turn to unlock
+### SC (Subscriber Connector)
 
-SC - Subcriber Connector
+The name is not actually an abbreviation, although it is sometimes expanded as "square connector" or "standard connector."
 
-Not actually an abbreviation
-- We have created our own names
-- Square connector
-- Standard connector
+The connector locks when pushed in and unlocks when pulled out.
 
-Pushed on to lock
-- Pull connector to unlock
+SC is a popular fiber connector used in many data centers.
 
-A popular fiber connector
-- Common in many data centers
+### LC (Lucent Connector)
 
-LC- Lucent Connector
+LC is another popular fiber connector; it is smaller and more compact than some alternatives.
 
-Another popular fiber type
-- Smaller and more compact connector
+It locks in place with a clip; press the clip to release it.
 
-Locks in place with a clip
-- Press to release
+Other informal expansions include "local connector" and "little connector."
 
-Other names
-- Local Connector
-- Litte Connector
-
-
-
-
-
+---
 
 ## An Overview of Memory
-
 
 What is memory?
 
@@ -1682,24 +1317,24 @@ Random Access Memory (RAM) is the most common
 
 RAM is not referring to hard drive or SSD storage
 - Do not mix the two terms
-- Data is stored permaently on the drive
+- Data is stored permanently on the drive.
 
 Data and programs can only be used when moved to RAM
 
 RAM slots
 
 Memory types have changed throughout the years
-- Driven by standarization and technology
+- Driven by standardization and technology
 
 One of the most important components of your computer
-- Speed,speed,speed
+- Speed, speed, speed
 
 Every motherboard is different
 - Check your documentation
 
 DIMM
 
-DIMM 
+DIMM
 - Dual inline memory module
 - Electrical contacts are different on each side
 
@@ -1708,14 +1343,14 @@ DIMM
 SO-DIMM
 
 Small Outline Dual Inline Memory Module
-- About half the width as a DIMM
+- About half the width of a DIMM
 
 Dynamic Random Access Memory
 
 The memory on the DIMM
 
-Dynamic 
-- Needs constant refreshing 
+Dynamic
+- Needs constant refreshing
 - Without refreshing, the data in memory disappears
 
 Random access
@@ -1728,23 +1363,23 @@ Synchronous DRAM (SDRAM)
 
 SDRAM is synchronous with the common system clock
 - Queue up one process while waiting for another
-- Classic DRAM did not wait for a clock signal 
+- Classic DRAM did not wait for a clock signal
 
-SDR v DDR 
-- Single Data Rate - one clock cycle = one data transferred
-- Dual Data Rate - one clock cyle = two data transfers
+SDR vs. DDR
+- Single Data Rate: one data transfer per clock cycle
+- Double Data Rate: two data transfers per clock cycle
 
 Double Data Rate 3 (DDR3) SDRAM
 
-Twice the date rate of DDR2
-- Larger chip capactities
+Twice the data rate of DDR2
+- Larger chip capacities
 
-No backwards compatibiliy
+No backward compatibility
 - Speed brings sacrifice
 
 DDR4 SDRAM
 
-Speed increases over DDR3 
+Speed increases over DDR3
 - Faster frequencies
 
 Again, no backward compatibility
@@ -1754,324 +1389,204 @@ DDR5 SDRAM
 Faster data transfers between the memory module and motherboard
 - Higher speeds than DDR4
 
-The key has moved 
-- No backwards compatibilty 
+The key has moved.
+- No backward compatibility
 
-
-
-
+---
 
 ## Memory Technologies
 
+### Error detection and correction
 
+Some memory can detect or correct errors and is used in critical systems such as virtual machine and database servers.
 
-Memory that checks itself
+**Parity memory** adds a parity bit.
+- Parity can detect some errors, but it cannot always detect or correct them.
 
-Used on critcal computer systems
-- VM servers, databases servers, any server
+**Error-correcting code (ECC) memory** detects and corrects some errors automatically.
+- Not all systems support ECC memory.
+- ECC memory looks similar to non-ECC memory.
 
-Parity memory
-- Adds an additional parity bit
-- Won't always detect an error
-- Can'y always correct an error
+With even parity, the parity bit makes the total number of 1 bits even. Check whether a given byte has valid or invalid even parity.
 
-Error Correction Code(ECC)
-- Detects errors and corrects on the fly
-- Not all systens use ECC
-- It looks the same as non-ECC memory
+### CPU-to-RAM throughput
 
-Parity
+The maximum data transfer rate between RAM and the CPU is the memory bandwidth.
+- It is measured in MT/s (megatransfers per second).
+- For example, a 32 GB DDR5 module may be rated at 560 MT/s.
+- Higher throughput is useful, but is limited by hardware capabilities.
 
-Even parity
-- The parity bit makes an even number
+### Multichannel memory
 
-Valid or error?
-- Even parity byte
+Increasing the speed of a single memory bus is difficult, so systems can use multiple independent memory channels to increase throughput.
+- Dual-, triple-, and quad-channel configurations are common.
+- Matching memory modules are recommended for best results.
+- Motherboard memory slots are often color-coded to indicate channel groupings.
 
-CPU to RAM throughput
-
-There's a maximum throughput between RAM and CPU
-- The memory bandwidth
-
-Measured in MT/s
-- Megatransfers/s
-- Million transfers per second
-- e.g 32 GB DDR5, 1x32GB, 560MT/s
-
-Faster is better
-- Physics becomes the challenge
-
-Multi-channel memory
-
-Difficult to increase the speed
-- Push as much as possible across a single memory bus
-
-Twoo independent memory buses
-- Doubles the throughput
-- Two memory modules are faster than one
-
-Dual channel, triple channel, or quad channel memory
-
-Memory combinations should match
-- Exact matches are best
-
-Memory module slots are often colored differently
-
-
-
-
-
+---
 
 ## Storage Devices
 
-
-
-Storage Devices
-
-need some way to store information when the computer is off
+Computers need a way to store information when they are powered off.
 - RAM requires power to maintain the data
 
-Many different ways to store data
-- Hard drives
-- Solid state drives
-- Flash drive
-- Memory cards
-- Ooptical drives
+Common storage devices include hard drives, solid-state drives, flash drives, memory cards, and optical drives.
 
-Hard Disk Drives (HDD)
+### Hard disk drives (HDDs)
 
-Non-volitile magnetic storage
-- Radily rotating platters
+HDDs use nonvolatile magnetic storage on rapidly rotating platters.
 
-Random access
-- Retrieve data from any part of the drive at any time
+HDDs provide random access, allowing data to be retrieved from any part of the drive.
 
-Moving parts
-- Spinning platters, moving actuator arm
-- Mechanical components limit the access speed
-- Mechanical components can also break
-- Platter, actuator, Arm, head
+HDDs contain moving parts, including spinning platters, an actuator arm, and read/write heads.
+- Mechanical components limit access speed and can fail.
 
-Spindle Speeds
-- RPM            15,000     10,000      7,200       5,400
-- Avg Latency    2ms        3ms         4.16ms      5.55ms
+Spindle speeds and average latency
+- RPM: 15,000; 10,000; 7,200; 5,400
+- Average latency: 2 ms; 3 ms; 4.16 ms; 5.55 ms
 
-Drive Size comparison
-- 3.5 in, 2.5in, 22mm (Width)
+Common drive widths include 3.5 in, 2.5 in, and 22 mm.
 
-Solid State Drive (SSD)
+### Solid-state drives (SSDs)
 
-Non-volatile memory
-- No moving parts
+SSDs use nonvolatile memory and have no moving parts.
 
-Very fast performance
-- No spinning drive delays
+They provide fast performance without the delays associated with spinning disks.
 
-2.5in SATA interface
+Some SSDs use a 2.5-in SATA interface.
 
-PCIe storage interfaces
+### PCIe storage interfaces
 
-High speed for SSD communication
-- Used before M.2
+PCIe provides high-speed communication with SSDs and was used before the M.2 form factor became common.
 
-Connect directly to the motherboard
-- Provides power
-- High throughput
+PCIe storage devices connect directly to the motherboard for power and high throughput.
 
-PCI Express
-- Modern PCIe standards can transfer data at 65 gigbits per second per lane
+Modern PCIe standards can transfer data at 65 gigabits per second per lane.
 
-NVMe
+### NVMe
 
-SATA was designed for hard drives
-- Uses AHCI (Advanced Host Controller Interface) to move drive data to RAM
-- SATA revision 3 throughput up to 6 gbps
-- SSDs need a faster communication method
+SATA was designed for hard drives and uses AHCI (Advanced Host Controller Interface) to move drive data to RAM.
+- SATA revision 3 has throughput up to 6 Gbit/s.
+- SSDs need a faster communication method.
 
-NVMe (Non-Volatile memory express)
-- Designed for SSD speeds
-- Lower latency, supports higher throughputs
-- Uses the PCIe bus
-- NVMe using M.2 has a theoretical transfer speed of 20 Gbps
+Non-Volatile Memory Express (NVMe) was designed for SSD speeds.
+- It provides lower latency and higher throughput.
+- It uses the PCIe bus.
+- An NVMe drive using M.2 has a theoretical transfer speed of 20 Gbps.
 
-Serial attached SCSI
+### Serial Attached SCSI (SAS)
 
-The latest generation of SCSI technology
-- Increased storage throughput
-- Serial communication
-- SCSI protocol 
-- SAS - Serial Attached SCSI
+SAS is a serial SCSI technology that increases storage throughput.
 
-The control abnd management of SCSI
-- Useful in large storage arrays
+It is useful for controlling and managing large storage arrays.
 
-An upgrade to SATA throughput
-- SATA can communicate at 6Gbps
-- High end SAS can reach 22.5 GBPS
+SAS can provide higher throughput than SATA.
+- SATA can communicate at 6 Gbit/s.
+- High-end SAS can reach 22.5 Gbit/s.
 
-2.5in SAS drive
+SAS drives are also available in a 2.5-in form factor.
 
-mSATA (Mini-SATA)
+### mSATA (Mini-SATA)
 
-Shrink the SATA drive into smaller devices
-- Same data, different for factor
-- Great for laptops and mobile devices
+mSATA adapted SATA technology to a smaller form factor for laptops and mobile devices.
 
-Smaller than 2.5in SATA drives
-- No spinning drive
-- Allows for different form factors
+These drives are smaller than 2.5-in SATA drives, have no spinning parts, and support different form factors.
 
-Was used briefly
-- Quickly replace by the m.2 standard
+mSATA was used briefly before being largely replaced by the M.2 standard.
 
-M.2 interface
+### M.2 interface
 
-Smaller form factor
-- No SATA data or power cables
+M.2 is a smaller form factor that does not require separate SATA data or power cables.
 
-Can use a PCI Express bus connection
-- 4 GB/s throughput or faster when using NVMe PCIe x4
+M.2 devices can use a PCI Express bus connection.
+- NVMe over PCIe x4 can provide 4 GB/s throughput or more.
 
-Different connector types
-- Needs to be compatible with the slot key/spacere
-- B key, Mkey, or B and M key
-- Some M.2 drives will support both
+M.2 connectors use different key types, including B, M, and B+M.
+- A drive's key must match the slot; some drives support both B and M keys.
 
-B-key and M- Key
+An M.2 connector does not guarantee NVMe support; the interface may use AHCI.
+- Check the device documentation.
 
-M.2 doesn't guarantee NVMe
-- Your M.2 interface may be using AHCI
-- Check your documentation
+Your motherboard may support only one type of M.2 key, so check its documentation.
 
-Your motherboard may only support one type o fM.2 key
-- Check the documentation agaim
+### Flash drives
 
-Flash drives
+Flash drives use EEPROM (electrically erasable programmable read-only memory), a type of nonvolatile memory that retains data without power.
 
-Flash memory
-- EEPROM (Electrically erasable programmable read only memory)
-- Non volatile memory
-- No power required to retain data
+Flash memory has a limited number of write cycles, but data can still be read.
 
-Limited number of writes
-- Can still read the data
+Flash drives are not designed for archival storage; they can be lost or damaged, so keep a backup.
 
-Not designed for archival storage
-- Easy to lose or damage
-- Always have a backup
+### Optical drives
 
-Optical drives
+Optical drives use a laser to read microscopic marks that store data in binary form.
 
-Samll bumps read with a laser beam
-- Microscopic binary storage
+Optical media is relatively slow but can be used for archival storage.
 
-Relatively slow
-- Archival media
+Common formats include CD-ROM, DVD-ROM, and Blu-ray.
 
-Many different formats
-- CD ROM, DVD ROM, Bluray
-
-
-
-
-
+---
 
 ## RAID
 
+RAID (Redundant Array of Independent Disks) combines multiple drives to improve performance, provide redundancy, or both. It is not a substitute for backups.
+- RAID was also historically called "Redundant Array of Inexpensive Disks."
+- Different RAID levels provide different combinations of performance, capacity, and redundancy.
 
+RAID 0: Striping
 
-Data redundancy
+RAID 0 splits file blocks across two or more physical drives.
+```text
+Disk 0: Block 1A | Block 3A | Block 5A | Block 7A
+Disk 1: Block 2A | Block 4A | Block 6A | Block 8A
+```
 
-Hard drives store huge amount of data
-- Important data
+Striping can improve performance because data is written across multiple drives.
 
-Hard drives are moving components
-- They will eventually break
+RAID 0 provides no redundancy. If one drive fails, the array fails and data may be lost.
 
-What happens to the data when the drive fails?
-- You can prepare for that
-- Use an array of drives
+RAID 1: Mirroring
 
-RAID is not backup
+RAID 1 duplicates file blocks across two or more physical drives.
+```text
+Disk 0: Block 1 | Block 2 | Block 3 | Block 4
+Disk 1: Block 1 | Block 2 | Block 3 | Block 4
+```
 
-RAID
+Mirroring duplicates every file, so the required disk space is doubled.
 
-Redundant Array of Independent Disks
-- They're also inexpensive disks
+RAID 1 provides redundancy; a single drive failure does not affect data availability.
 
-Different RAID levels
-- Some redundant, some not
+RAID 5: Striping with one parity drive
 
-RAID 0- Striping
+RAID 5 stripes file blocks and distributes parity blocks across the drives. It requires at least three drives.
+```text
+Disk 0: Block 1A | Block 1B | Block 1C | Parity D
+Disk 1: Block 2A | Block 2B | Parity C | Block 1D
+Disk 2: Block 3A | Parity B | Block 2C | Block 2D
+Disk 3: Parity A | Block 3B | Block 3C | Block 3D
+```
 
-File blocks are split between two or more physical drives
-Disk 0 - Block 1A Block 3A block 5A Block 7A
-Disk 1 - Block 2A Block 4A Block 6A Block 8A
+RAID 5 uses disk space efficiently because files are not duplicated, although some capacity is used for parity.
 
-High performance 
-- Data written quickly
+RAID 5 can recover from a single drive failure, though parity calculations may affect performance.
 
-No redundancy 
-- A drive failure breaks the array
-- RAID 0 is zero redundancy
+RAID 6: Striping with two parity drives
 
-RAID 1- Mirroring
+RAID 6 adds a second parity block and requires at least four drives.
 
-File blocks are duplicated between two or more phyical drives
-Disk 0- Block 1 Block 2 block 3 Block 4
-Disk 1- Block 1 Block 2 block 3 Block 4
+It can tolerate the failure of up to two drives while keeping data available.
 
-High disk utilization
-- Every file is duplicated
-- Required disk space is doubled
-
-High redundancy 
-- Drive failure does not affect data availability
-
-RAID 5- Stripin with on parity drive
-
-File blocks are striped
-- Along with a parity block
-- Requires at least three drives
-Disk 0- Block 1A Block 1B Block 1C ParityD
-Disk 1- Block 2A Block 2B Parity C Block 1D
-Disk 2- Block 3A Parity B Block 2C Block 2D
-Disk 3-Parity A Block 3B Block 3C Block 3D
-
-Effiecient use of disk space
-- Files aren't duplicated, but space is still used for parity
-
-High redundancy 
-- Data is available after drive failure
-- Parity calculation may affect performance
-
-RAID 6- Striping with two parity drives
-
-Add another parity block
-- Requires at least four drives
-
-Could lose two drives
-- DATA would continue to be avaiable 
-
-Requires another drive
-- Adds more parity
-- Does not add more capacity
+The additional parity requires another drive's worth of capacity but does not increase usable capacity.
 
 RAID 10 (RAID 1+0)
 
-the speed of striping the redundancy of mirroring
-- A stripe of mirrors - the best of both worlds
+Combines the speed of striping with the redundancy of mirroring.
+- RAID 10 combines striping and mirroring and requires at least four drives.
 
-Need at least 4 drives
-
-
-
-
-
+---
 
 ## Motherboards
-
-
 
 Motherboard form factors
 
@@ -2091,64 +1606,59 @@ Wikipedia: There are 40 different motherboard types
 
 What you need to know
 
-Comptia exam objectives:
-- "3.5 - Given a scenerio, install and configure motherboards, central processing untis (CPUs), and add-on cards"
+CompTIA exam objective:
+- "3.5: Given a scenario, install and configure motherboards, central processing units (CPUs), and add-on cards."
 
-Focus on which motherboard would be the best choice for a scenerio
-- Memorizing the dimensions of the motherboard probably isn't the most important thing
-- ATX, microATC, or ITX
+Focus on choosing the best motherboard for a scenario.
+- Memorizing motherboard dimensions is probably not the most important thing.
+- Know ATX, microATX, and ITX form factors.
 
 ATX form factor
 
 Advanced Technology Extended
 
-Standarized by Intel in 1995
+Standardized by Intel in 1995
 - Seen many updates over the years
 
 Power
-- 20pin connector
-- 24 pin connector, additonal 4/8 pin connector
+- 20-pin connector
+- 24-pin connector, with an additional 4- or 8-pin connector
 
-MicroATX(uATX, M-ATX)
+MicroATX (uATX, M-ATX)
 
 Smaller than ATX motherboard
 - Limited expansion slots
 
 Backward compatibility
 - Similar mounting points
-- Similiar power
+- Similar power
 
 Very popular form factor
-- Actively manufactored as of 2019
+- Actively manufactured as of 2019
 
 ITX form factor
 
-A series of low power motherboards
+A series of low-power motherboards
 - Developed by VIA technologies in 2001
-- Small for factor
+- Small form factor
 
-Mini-ITX is screw compatible with ATX 
+Mini-ITX is screw compatible with ATX
 - Fits almost any enclosure
 
 Small form factor uses
 - Single-purpose computing, streaming media
 
-
-
-
-
+---
 
 ## Motherboard Expansion Slots
 
-
-
 A computer bus
 
-Communication path 
-- A city of technology
+Communication path
+- A path for data between components
 
 Internal PC growth
-- Indepedent pathways
+- Independent pathways
 
 System expansion
 - Additional capabilities
@@ -2161,14 +1671,14 @@ Peripheral Component Interconnect
 
 Many expansion options
 - 32 bit and 64 bit bus width
-- Parallel communciation
+- Parallel communication
 
-A common expanison interface on previous computer generations
-- PCI Express is th newer technology
+A common expansion interface on previous computer generations
+- PCI Express is the newer technology.
 
 PCI Express
 
-Also know as PCIe
+Also known as PCIe
 - Replaces the older PCI standard
 
 Communicates serially
@@ -2179,31 +1689,26 @@ One, two, four, eight, sixteen, or thirty two full duplex lanes
 - x1, x2, x4, x16, x32
 - "x" is pronounced "by" ("by 4," "by 16")
 
-
-
-
-
+---
 
 ## Motherboard Connections
 
-
-
-24 pin Motherboard power
+24-pin motherboard power
 
 Main motherboard power
 - Provides +3.3 V, +/- 5V, and +/- 12 V
 
-20 pin connector was the riginal ATX standard
-- 24 pin was added for PCI Express power
+The 20-pin connector was the original ATX standard.
+- The 24-pin connector was added for PCI Express power.
 
 You can connect a 24 pin connector to a 20 pin motherboard
 - Some cables are 20 pin +4 pin
 
-PCIe 6pin and 8 pin power
+PCIe 6-pin and 8-pin power
 
 Additional power for PCI Express adapters
-- 6 pin (75watts), 8 pin (150watts)
-- Provides +12V
+- 6-pin (75 W) and 8-pin (150 W) connectors
+- Provide +12 V
 
 Commonly seen on high power components
 - Video adapters
@@ -2216,23 +1721,18 @@ Storage drive interfaces - SATA
 
 eSATA
 
-Headers 
+Headers
 
 A pin header
 - A simple electrical interface
 - The connector is attached to the header
 
-Many different uses 
-- Power, peripheral connections, Lights, buttons
+Many different uses
+- Power, peripheral connections, lights, and buttons
 
-
-
-
-
+---
 
 ## Motherboard Compatibility
-
-
 
 Intel and AMD
 
@@ -2247,7 +1747,7 @@ Different sockets
 
 Choosing a side
 - Historically, AMD is value and Intel is performance
-- These switch paces often
+- These performance differences shift over time.
 
 Server motherboards
 
@@ -2262,485 +1762,321 @@ Expansion slots
 - Many slots and different sizes
 
 Overall size
-- Designed for a rack mounted system
-- Larger ATX sized system
+- Designed for a rack-mounted system
+- Larger than a typical ATX system
 
-
-
-
+---
 
 ## Hardware (25%)
 
-    Component installation: setting up RAM, CPUs, and storage device
-    Cables and connectors: working with HDMI, Ethernet, and USB cables.
-    Peripheral devices: installing and maintaining printers, scanner, and other peripherals.
-    Motherboards and power: configuring motherbards, power supplies, and cooling solutions.
+- Component installation: Set up RAM, CPUs, and storage devices.
+- Cables and connectors: Work with HDMI, Ethernet, and USB cables.
+- Peripheral devices: Install and maintain printers, scanners, and other peripherals.
+- Motherboards and power: Configure motherboards, power supplies, and cooling solutions.
 
+---
 
 ## The BIOS
 
-
 ### BIOS (Basic Input/Output System)
 
-The software used to start your computer
-* Firmware
-* Also called System BIOS or ROM BIOS
-* Stored in ROM or flash memory
+The BIOS is firmware that initializes the computer and starts the operating system.
+- It is also called System BIOS or ROM BIOS.
+- It is stored in ROM or flash memory.
 
 ### Startup sequence
 
-Initializes the CPU and memory
-* Builds the workspace
+The BIOS initializes the CPU and memory, then builds the workspace.
 
-POST
-- Power on self test
+POST (power-on self-test) checks the system during startup.
 
-Look for a boot loader
-- Start the operating system
+The BIOS looks for a boot loader, which starts the operating system.
 
-Legacy BIOS
+### Legacy BIOS
 
-The original/ traditional BIOS
-- It's been around for more than 25 years
+The legacy BIOS is the original BIOS design and has been used for decades.
 
-Older operating system talked to hardware through BIOS
-- Instead of accessing hardware directly
+Older operating systems communicated with hardware through the BIOS rather than accessing it directly.
 
-Limited hardware support
-- No drivers for modern newtork, video, and storage devices
+Legacy BIOS has limited hardware support and does not provide drivers for modern network, video, and storage devices.
 
-UEFI BIOS
+### UEFI BIOS
 
-Unified Extensible Firmware interface
-- Based on Intel's EFI (Extensible Firmware Interface)
+UEFI (Unified Extensible Firmware Interface) is based on Intel's EFI (Extensible Firmware Interface).
 
-A defined standard
-- Implemented by manufactures
+UEFI is a defined standard implemented by manufacturers.
 
-Designed to replace the leagcy BIOS
-- Need a modern BIOS for modern computers
-- Graphical and text based
+UEFI is designed to replace legacy BIOS in modern computers and supports graphical and text-based interfaces.
 
-
-
-
-
+---
 
 ## BIOS Settings
 
+### Opening BIOS setup
 
+Use the system setup key during startup. Common keys include Del, F1, F2, Ctrl+S, and Ctrl+Alt+S.
 
-The secret button(s)
+Hyper-V is available through Turn Windows features on or off in Windows 10 and Windows 11.
 
-Launching the system setup
-- Del, F1, F2, Ctrl-S, CTRL-ALT-S
+VMware Workstation: <http://professormesser.link/vmware>
 
-Hyper -V (Windowns 10/11)
-- Turn Windows features on and off
+VirtualBox: <http://www.virtualbox.org>
 
-VMWare workstation
-- http://professormesser.link/vmware
+Online simulators are also available; search for a UEFI BIOS simulator.
 
-But not Virtual BOX
-- http://www.virtualbox.org
+### Fast Startup
 
-Many simulators online
-- Serach for UEIF BIOS Simulator
+Fast Startup in Windows 10/11 and earlier versions does not fully shut down the computer.
+- The computer starts too quickly to open BIOS setup during startup.
 
-Fast Startup
+To open advanced startup options from the Windows desktop:
+- Hold Shift while selecting Restart.
+- Select Settings > Update & Security > Recovery > Advanced startup > Restart now.
+- Alternatively, open System Configuration (`msconfig`).
 
-Windows 10/11 and (previous versions)
-- Doesn't actually shut down all the way
-- Starts up so uickly, you cna't open the BIOS configuration
+Interrupting normal startup three times may display the boot options screen.
 
-From the Windows Desktop
-- Hold down shift when clicking Restart
-- Settings/ipdates&Security/Recovery/Advanced startup/Restart now
-- System COnfiguration(msconfig)
+### BIOS configuration tips
 
-Interrupt normal boot three times
-- Presents the boot option screen
+Back up your BIOS configuration by writing detailed notes or taking a picture.
 
-Important Tips
+Do not change a setting unless you understand it; unnecessary changes can be difficult to troubleshoot.
 
-make a backup of your BIOS configuration
-- Write detailed notes
-- Take a picture
+Keep a backup of the configuration to save time during recovery.
 
-Don't make a change unless you're certain of the setting 
-- It's difficult to leave it alone
+### Boot options
 
-Did I mention the backup?
-- It can save a lot of time!
+The BIOS determines what happens when you power on the computer.
 
-Boot options
+Disabled hardware is unavailable to the operating system.
 
-What happens when you power on?
-- The BIOS knows
+You can modify the boot order to choose which device starts first, such as a USB drive, SSD, or hard drive.
 
-Disable hardware
-- Unavailable to the operating system
+### USB security
 
-Modify the boot order
-- Which boot first?
-- Move to the next in order
-- USB drive,SSD,hard drive
+USB storage presents a security challenge because devices are small but can hold large amounts of data.
 
-USB permissions
+USB connections are convenient and provide high-speed data transfer.
 
-A security challenge
-- Very small storage devices
-- Very large capactities
-
-USB connections
-- Convienent
-- High speed
-
-US Department of Defense banned USB flash media for 15 months in 2008 
+The U.S. Department of Defense banned USB flash media for 15 months in 2008.
 - SillyFDC worm
 
-Fans 
+### Fan control
 
-Computing power creates heat
-- A lot of heat
+Computer components generate heat.
 
-Many different cooling fans
-- CPU fans
-- Chassis fans
+Computers use CPU and chassis fans for cooling.
 
-Motherboards often include an integrated fan controller
-- And temperature sensors
-- The motherboard increases and decreases the fan speeds
+Motherboards often include a fan controller and temperature sensors that adjust fan speed.
 
-Secure Boot
+### Secure Boot
 
-Malicious software can "own" your system
-- Malicious drivers or OS software
+Malicious drivers or operating-system software can compromise a system.
 
-Secure boot
-- Part of the UEFI specification
+Secure Boot is part of the UEFI specification.
 
-Digitally sign known good software
-- Cryptographically secure
-- Software won't run without the proper signature
+It uses digital signatures to verify trusted software.
+- Software will not run during the boot process without an approved signature.
 
-Support in many different operating system
-- Windows and Linux support
+Secure Boot is supported by operating systems such as Windows and Linux.
 
-UEFI BIOS Secure Boot
+### UEFI firmware protection
 
-UEFI BIOS protections 
-- BIOS include the manufractures's public key
-- Digital sisganture is checked during a BIOS update
-- BIOS prevents unauthorized writes to the flash
+UEFI firmware can include the manufacturer's public key and check the digital signature during a BIOS update.
+- The BIOS can prevent unauthorized writes to flash memory.
 
-Secure Boot verifies the bootloader
-- Checks the OS bootloader's digital signature
-- Bootloader must be signed with a trusted certificate
-- Or manually  approved digital signature
+Secure Boot verifies the operating system's bootloader signature.
+- The bootloader must be signed with a trusted certificate or an explicitly approved signature.
 
-Boot password management
+### Boot password management
 
-Boot password/User password
-- System won't start
-- Need the password to boot the operating system
+A boot or user password prevents the system from starting until the password is entered.
 
-Supervisor/BIIOS password
-- Restrict BIOS changed
-- Must use BIOS password to change any configuration settings
+A supervisor or BIOS password restricts changes to BIOS settings.
 
-Remember you password!
-- Must reset the BIOS to recover
+Remember the password; you may need to reset the BIOS if it is lost.
 
-Clearing a boot password
+### Clearing a boot password
 
-Store the BIOS configuration
-- Your settings
+Before clearing a boot password, store the BIOS configuration settings.
 
-Complementary metal-oxide semiconductor (CMOS)
-- A type of memory
-- may be backed up with a battery
+Complementary metal-oxide semiconductor (CMOS) memory may be backed up by a battery.
 
-Usually flash memory these days
-- Easily stored and accessed
+Modern systems usually store BIOS settings in flash memory, where they can be stored and accessed easily.
 
-Reset with a jumper
-- Short (connect) two pins on the mother board
+Some systems can be reset with a jumper that shorts (connects) two motherboard pins.
 
-Temperature monitoring
+### Temperature monitoring
 
-Part of the BIOS
-- Built in diagnotics
+The BIOS may include built-in temperature monitoring and diagnostics.
 
-Run from the BIOS menu
-- No additonal media or software required
+Run these checks from the BIOS menu; no additional media or software is required.
 
-Focused on hardware checks
-- Doesn't touch the operating system
+These checks focus on hardware and do not involve the operating system.
 
-Virtualization Support
+### Virtualization support
 
-Run other operating systems within a single hardware platform
-- Multiple operating systems share physical hardware components
+Virtualization lets multiple operating systems run on one hardware platform and share its physical components.
 
-Virtualization in software was limited
-- Performance and hardware management challenges
+Software-based virtualization was limited by performance and hardware-management challenges.
 
-Virtualization added to the processor
-- Hardware is faster and easier to manage
-- Intel Virtualiztion Technology (VT)
+Processor support for virtualization improves performance and hardware management.
+- Intel Virtualization Technology (VT)
 - AMD Virtualization (AMD-V)
 
-
-
-
-
+---
 
 ## HSM and TPM
 
+### Secrets and keys
 
+IT security relies on secrets and trust between devices and applications.
 
-Keeping Secrets
+Encryption protects web servers, stored files, and phone data.
 
-IT security is based around secrets
-- And trusting other devices ana dapplications
+The encryption key is the secret that unlocks protected data.
 
-We use a lot of encryption
-- Web servers, file storage, phone data
+Keys must be stored securely. Trusted Platform Modules (TPMs) and Hardware Security Modules (HSMs) provide ways to protect them.
 
-The secret part is the key
-- Unlocks all of this encryption
+### Trusted Platform Module (TPM)
 
-We need to storre this key somewhere
-- How do you securely store these secrets?
-- Where do you store these secrets?
+A TPM is a specification for hardware that supports cryptographic functions on a single device.
 
-Trusted Platform Module (TPM)
+It includes a cryptographic processor with random-number and key-generation functions.
 
-A pecification for crypograhic functions
-- Hardware to help with single device encryption fucntions
+Persistent memory can include unique keys installed during production.
 
-Cryptohraphic processor
-- Random number generator, kety generator
+TPM memory can store keys and hardware configuration information.
 
-Persistent memory
-- Includes unique keys burned in during production
+Password protection can help resist dictionary attacks.
 
-Versatile memory
-- Storage keys, hardware configuration information
+A TPM contains a unique secret key that is not available outside the device.
 
-password protected
-- No dictionary attacks
+The TPM links this key to the computer, so an encrypted drive may not work when moved to another computer.
 
-Contains a unique secret key
-- Not available outside od this device
+The TPM can also serve as a root of trust, helping determine whether the computer has been modified or tampered with.
 
-Links this key to this computer
-- Can't move an encrypted drive to another computer
-- The key is on this computer
+This cryptographic protection is specific to one device; the key cannot be used on another computer.
 
-Also used as a physical pouint of reference
-- A root of trust
-- has this computer been modified or tampered with?
+### Hardware Security Module (HSM)
 
-Can't use this key on another computer
-- Crypotgraphy for a single device
+HSMs are often used in large environments with server clusters and many different devices.
 
-Hardware Security Module (HSM)
+HSMs provide secure key storage and backup for servers. Lightweight HSMs for personal use may be available as smart cards or USB devices.
 
-Often used in large enviroments
-- Servers clusters, many diverse devices
+An HSM is often high-end cryptographic hardware in a plug-in card or separate device.
 
-Key backup
-- Secures storage for servers
-- Lightweight HSMs for personal use (Smart card, USB, flash drive)
+HSMs can accelerate cryptographic functions for other devices while keeping the key protected inside the module.
 
-Often high end cryptographic hardware
-- Plug-in card or serperate harware device
+### TPM and HSM comparison
 
-Crypographic accelerators
-- Performs crypographic functions for other devices
-- Only HSM knows the key
+**TPM:** Used on a single system to protect local data. It is often built into the motherboard or available as an add-on module.
+- Uses include mobile-device booting, screen locking, and encrypted storage.
 
-TPMs and HSMs
+**HSM:** Used by multiple systems to protect data across devices. It is often deployed as a high-end server or data-center appliance.
+- An HSM can protect a Certificate Authority key on a central secure device.
 
-TPM
-- Used on a single system
-- Secure data on a local device
-- Often built into a motherboard or available as an add-on module
-- Mobile phone booting, screen locking, and encrypted storage
-
-HSM
-- Used by many systems
-- Secure data across multiple devices
-- Often deployed as a high-end server or appliance in a data center
-- Protect the Certificate Authority key on a central secure device
-
-
-
-
-
+---
 
 ## CPU Features
 
+### Operating-system support
 
+Processors and operating systems may support 32-bit or 64-bit architectures.
 
-Operating system technologies
+A 32-bit processor can represent $2^{32}$ values (4,294,967,296).
 
-32-bit v 64-bit
-- Processor specific 
+A 64-bit processor can represent $2^{64}$ values (18,446,744,073,709,551,616).
+- This allows a much larger address space than 32-bit systems, though the operating system still has a maximum supported value.
 
-32-bit processor cans store
-- 2 to the 32 power = 4.294,967,296 values
+Hardware drivers must match the operating system architecture: 32-bit (x86) or 64-bit (x64).
 
-64-bit processors can store
-- 2 to the 64 power = 18.446,744,073,709,551,616 values
-- 4 GB vs. 17 billion GB
-- The OS has a maximum supported value
+A 32-bit operating system cannot run 64-bit applications, but a 64-bit operating system can run 32-bit applications.
 
-Hardware drivers are specific to the OS version (32-bit/ 64- bit)
-- 32-bit(x86) 64-bit (x64)
-
-32-bit OS cannot run 64-bit apps
-- But 64-bit OS can run 32-bit apps
-
-Apps in a 64 OS can run 32-bit apps
-- 32-bit apps:\\Program Files(x86)
-- 64-bit apps:\\Program files
+On 64-bit Windows, 32-bit applications are typically installed in `Program Files (x86)`, while 64-bit applications are installed in `Program Files`.
 
 Advanced RISC Machine (ARM)
 
-CPU architecture developed by Arm Ltd.
-- They design the chip , other license and build
+ARM is a CPU architecture developed by Arm Ltd.
+- Arm designs the chip architecture; other companies license and build the chips.
 
-Simplfied intruction set
-- Efficient and fast processing 
-- Less power
-- Less heat
+Its simplified instruction set supports efficient processing with lower power use and heat output.
 
-Traditionally used for mobile and IoT devices
-- Adoption by Apple and other manufactures for desktop and laptops
-- The lines are constantly blurring 
+ARM has traditionally been used in mobile and IoT devices, but Apple and other manufacturers have also adopted it for desktops and laptops.
 
-Proccessor Cores
+### Processor cores
 
-Dual-core/Quad-core/Octa-core/multi-core
-- And more all the time
+Processors are available with two, four, eight, or more cores.
 
-Multiple cores
-- Each core has its own cache
-- The entire chip may have a shared cache
+Each core has its own cache, and the processor may also have a shared cache.
 
-
-
-
-
+---
 
 ## Expansion Cards
 
+Expansion cards extend a computer's functionality when the motherboard does not provide the required features.
 
+Installation is usually straightforward because cards are designed for end-user installation.
 
-Extend the functionality of you rcomuter
-- You may need more than the motherboards providers
+Install the card, then install its driver so the operating system can use it.
 
-Relatively simple process
-- Designed for end user installation
+### Sound cards
 
-Install hardware
-- Add a card
+Sound cards can provide high-end audio, an advanced headphone amplifier, and home-theater or Dolby decoding.
 
-Install a driver
-- Software for the operating system
+They may also include inputs for music capture, podcasting, and microphones.
 
-Sound card
+### Video cards
 
-Output
-- High-end audio
-- Advanced headphone amp
-- Home theater, Dolby decoding
+Many CPUs include an integrated GPU, which provides video functionality within the CPU package.
 
-Multiple inputs
-- Music capture
-- Podcasting
-- Microphone
+Discrete graphics use a separate graphics card for higher performance.
 
-Video Card
+### Capture cards
 
-Many CPUs include an integrated GPU
-- Video functionality is built into the CPU package
+Capture cards accept video input for recording, live streaming, or connecting external cameras.
 
-Discrete graphics
-- The CPU in not part of the CPU
+They can require high video bandwidth and commonly use a PCI Express connection.
 
-Seperate interface card
-- High performance
+### Network interface cards (NICs)
 
-Capture Card
+A NIC adds an Ethernet connection when the motherboard does not include one or its onboard NIC is not working.
 
-Video as an input
-- Video capture
-- Live streaming
-- External cameras
+NICs can also add connections to servers, routers, and security devices.
 
-High performance
-- Video bandwidths can be quite high
-- PCI Express connection
+### Documentation and installation
 
-Ntework Interface Card (NIC)
+Check the motherboard documentation for the number and type of available slots.
 
-Ethernet connection
-- Motherboard may not include a NIC
-- Onboard NIC may not be working
+Check the adapter card documentation for minimum hardware and software requirements, known issues, and support information.
+- Support forums can provide useful information from other users.
 
-Additonal Connections
-- Servers
-- Routers
-- Sercurity Devices
+Some devices require driver installation before the hardware is installed.
 
-Documentation
+### Driver installation
 
-Check the motherboard documentation
-- Number and type of slots
+Check the documentation before installation.
 
-Check the adapter card documentation
-- Minimum requirements - Hardware, sorftware
-- Knowledge base - Any 'gotchas"
-- Support forums - What are other people saying?
+Download the latest driver from the manufacturer's website.
 
-You may need to perform a driver installation before installing hardware
+Uninstall previous drivers through Windows Device Manager.
 
-Driver installation
+Use the manufacturer's setup program or install the driver manually through Windows Device Manager.
 
-You checked the documentation first, right?
+After installation, check Device Manager to confirm that the card is working.
 
-Check the web for the latest version
-
-Uninstall previous drivers through Windows Device Manager
-
-Manufacturer provided setup program
-
-Manual installation through Windows Device Manager
-
-Check the Device Manager for the status
-- Does it work?
-
-
-
-
-
+---
 
 ## Cooling
 
-
-
 Case fans
 
-Cool air is pulled througha personal computer
+Cool air is pulled through a personal computer.
 - Always check for good airflow
 
-Motherboard layout become important
+Motherboard layout becomes important.
 
-Component location is key 
+Component location is key
 - Devices, wiring, power
 
 Many different sizes and styles
@@ -2750,15 +2086,15 @@ On-board fans
 
 Designed to cool an entire adapter card
 
-Can be bulky 
-- May take additonal adapter card space
+Can be bulky
+- May take additional adapter card space
 
 Usually seen on high-end graphics cards
 
 Fan specifications
 
 Standard sizes
-- 80 mm, 120mm, 200mm
+- 80 mm, 120 mm, and 200 mm
 
 Different speeds
 - Variable speeds
@@ -2771,11 +2107,11 @@ Fanless / passive cooling
 No fans, no noise
 - Silent operation
 
-Specialized funtions 
-- Video servers, tv top box, satellite reciever, media server
+Specialized functions
+- Video servers, TV set-top boxes, satellite receivers, and media servers
 
 Functions are very controlled
-- Carefully measurede thermal tests
+- Carefully measured thermal tests
 
 Low power components
 - Heat sink
@@ -2783,229 +2119,132 @@ Low power components
 Heat Sink
 
 Dissipate heat through thermal conduction
-- Copper or aluminmum alloy
+- Copper or aluminum alloy
 
 Fins/grid increase surface area
 - Heat is then transferred to the cooler air
 
 They get HOT - don't touch them!
 
-Thermal paste creates a good contact between the chip and the heat sick
+Thermal paste creates good contact between the chip and the heat sink.
 
-Themal paste
+Thermal paste
 
 Thermal grease, conductive grease
-- Thermmaly conductive adhesive
+- Thermally conductive adhesive
 
 Place between the heat sink and the component
 - Improves thermal conductivity
 - Moves the heat away from the component
 
 A little bit goes a long way
-- Pea sized application
+- Pea-sized application
 
-Themal pad
+Thermal pad
 
 Conduct heat without the mess
-- Cut to size amd install
+- Cut to size and install
 
 Easy to use
 - Won't leak and damage components
 
-Almsot as effective as thermal paste
+Almost as effective as thermal paste
 - But still very good
 
-Not reusable 
+Not reusable
 - Remove and replace
 
 Liquid cooling
 
 Coolant is circulated through a computer
 - Not a new concept
-    Automobiles, mainfram computers
+  - Used in automobiles and mainframe computers
 
-High end systems
+High-end systems
 
 Gaming, graphics
 
 Overclocking
 
-
-
-
-
+---
 
 ## Computer Power
 
+### Electrical safety
 
+**Warning:** Always disconnect a device from its power source before working on it.
+- Some devices store a charge in capacitors. Know how to discharge them safely before touching internal components.
+- Never connect your body to any part of an electrical system or to its ground wire.
+- Respect electricity; it can cause serious injury.
 
-WARNING
+### Computer power supplies
 
-ALWAYS DICONNECT FROM THE POWER SOURCE WHEN WORKING ON A DEVICE
-- Always.Seriously
+Computers use direct current (DC), while most power sources provide alternating current (AC).
+- A power supply converts 120 V AC or 240 V AC to 3.3 V DC, 5 V DC, and 12 V DC.
+- A faulty power supply can prevent the computer from working.
 
-Some devices store a charge in capacitors
-- Know how to discharge before touching
+### Amperes, voltage, and power
 
-NEVER CONNECT YOUR BODY TO ANY PART OF AN EECTRICAL SYSTEM
-- DO NOT CONNECT YOURSELF TO THE GROUND WIRE OF AN ELECTRICAL SYSTEM
+An ampere (amp, A) measures the rate of electron flow past a point in one second. It is analogous to the diameter of a hose.
 
-RESPECT ELECTRICITY
-- It does not respect you
+Voltage (volt, V) is the electrical "pressure" that pushes electrons, analogous to how far a faucet is open.
 
-Computer power supply
+A watt (W) measures real power use.
+- Volts x amps = watts.
+- 120 V x 0.5 A = 60 W.
 
-Computer uses DC voltage
-- Most power sources provide AC voltage
+### AC and DC current
 
-Convert 120 v AC or 240 V AC
-- to 3.3 C DC, 5V DC, and 12 V DC
+Alternating current (AC) constantly reverses direction and distributes electricity efficiently over long distances.
+- AC frequency is important: the United States and Canada use 110 to 120 V AC at 60 Hz; Europe uses 220 to 240 V AC at 50 Hz.
 
-You'll know when this isn't working 
-- An important component
+Direct current (DC) flows in one direction at a constant voltage.
 
-AMP and VOLT
+Voltage varies by country. If a power supply requires manual switching between 120 V and 230 V, check the setting with a meter or use an auto-switching power supply.
+- Never connect a 120 V power supply to a 230 V source unless it supports that voltage.
 
-Ampere (Amp, A) - The rate of electron flow past a point in one second
-- The diameter of the hose
+### Power-supply output
 
-Voltage (volt, V) Electrical "pressure" pushing the electrons
-- How open the faucet is
+Power supplies provide different voltages for different components. Voltage is a difference in electrical potential measured relative to a common reference point, usually ground.
+- An analogy: the second floor of a house may be +10 ft and the basement -10 ft relative to the front door.
+- **+12 V:** PCIe adapters, hard-drive motors, cooling fans, and many modern components.
+- **+5 V:** Some motherboard components; many components now use +3.3 V.
+- **+3.3 V:** M.2 slots, RAM slots, and motherboard logic circuits.
+- **+5 VSB:** Standby voltage.
+- **-12 V:** Integrated LAN, older serial ports, and some PCI cards.
+- **-5 V:** Available for ISA adapter cards, although most cards did not use it. Modern motherboards do not have ISA slots.
 
-Power
+### Motherboard power connectors
 
-Watt(W) - Measurement of real power use
-- volt * amps = watts
-- 120 V * 0.5A = 60 W
+The 24-pin connector provides the main motherboard power, including +3.3 V, +/- 5 V, and +/- 12 V.
+- The 20-pin connector was the original ATX standard; the 24-pin version was added for PCI Express power.
+- A 24-pin connector can connect to a 20-pin motherboard. Some cables split into 20-pin and 4-pin sections.
 
-Current
+### Redundant power supplies
 
-Alternating Current (AC)
-- Direction of current constantly reverses
-- Distributes electricity effiecently over long distances
-- Frequency of this cycle is important
-    US/Canada - 110 to 120 V of AC (VAC) , 60 (Hz)
-    Europe - 220 to 240 VAC, 50 Hz
+Servers may contain two or more power supplies.
+- Each supply can handle 100% of the load; normally, each runs at about 50%.
+- Hot-swappable supplies can be replaced without powering down the server.
 
-Direct Current (DC)
-- Current moves in one direction with a constant voltage
+### Power-supply connectors
 
-Voltage varies by country
+Fixed cables are attached to the power supply, so a supply may have too many or too few connectors for a system.
+- Modular power supplies let users add cables as needed, reducing unused wires and improving airflow, but they may cost more.
 
-Manually swith between q20 V and 230V
-- Get your meter!
-- Or use an auto voltage switching power supply
+### Sizing and efficiency
 
-Don't plug a 120 V power supply into a 230 V power source!
+Power supplies are rated in watts, both overall and for individual voltage rails. A larger supply is not necessarily better and will not make a computer faster.
+- Older cases and systems may use proprietary power-supply sizes.
+- Calculate the wattage required by all components, including the CPU, storage devices, and video adapter. Online calculators can help.
+- Video adapters often draw the most power; check the manufacturer's recommended supply wattage.
+- A supply operating at about 50% capacity can provide efficiency and room to grow.
 
-Power Supply output
+Converting AC to DC is not perfectly efficient; some power is lost as heat.
+- Power supplies commonly range from 80% to 96% efficiency, depending on voltage and redundancy.
+- Higher efficiency means more DC power and less heat, which can reduce costs.
+- Choose a suitable rating from an established certification program.
 
-Different voltages
-- For different components
-
-Positive and negative voltage
-- Voltage is a difference in potential
-- The electrical ground is a common reference point
-- Depends on where you measure from
-
-At the door of your house
-- The second floor is +10 ft
-- The basement is -10 ft
-
-+12V 
-- PCIe adapters, hard drive motors, cooling fans, most modern componenets
-
-+5 V
-- Some motherboard components
-- Many components are now using +3.3V
-
-+3.3V
-- M.2 slots, RAM slots, motherboard logic circuits
-
-+5 VSB
-- Standby Voltage
-
-- 12V
-- Integrated LAN
-- Olde serial ports
-- Some PCI cards
-
-- 5V
-- Available for ISA adapter cards
-- Most cards didn't use it
-- Today's motherboards don't have ISA slots
-
-24-pin motherboard power
-
-Main motherboard power
-- Provides +3.3V, +/- 5V, and +/-12V
-
-20-pin connector was the original ATX standard
-- 24 pin was added for PCI Express power
-
-You can connect a 24-pin connector to a 20 pin motherboard
-- Some cables are 20-pin +4 pin
-
-Redudant power supplies
-
-Two (or more) power supplies
-- Internal to the server
-
-Each power supply casn handle 100% of the load
-- Would normally run at 50% of the load
-
-How-swappable
-- Replace a faulty power supply without powering down
-
-Power supplu connectors
-
-Fixed connectors
-- Connected tot he power supply
-- Many have too many connectors
-- May not have enough
-
-Modular
-- Adds cables as needed
-- Fewer leftover wires, better airflow
-- A bit more expensive
-
-Sizing a power supply
-
-Power supplies are rated by watts
-- Overall and by individual volatges
-
-Bigger isn't necessarily better
-- More expensive Doesn't speed up your computer
-
-Physical size is relatively standard
-- Older cases and systems may have proprietary sizes
-
-Calculate the watts required for all components
-- CPU,s torage devices, video adapter
-- Many online calaculators
-
-Video adapters are usually the largest power draw
-- Many video card specifications list a recommended power supply wattage
-
-50% capacity is a good rule of thumb
-- Power supply runs efficiently and there's room to grow
-
-Energy efficiency
-
-Converting AC to DC isn't perfect
-- Some power is often lost
-- Heat is generated
-
-Check the efficiency range 
-- Power supplies often range between 80%-96%
-- Can depend on voltage and redundant power
-
-More efficiency means more DC power
-- And less heat: save money!
-
-There's an established certification program
-- Pick the right efficiency for you requirements
-
+---
 
 ## Multifunction Devices
 
@@ -3079,48 +2318,47 @@ The firmware is the multifunction device's internal operating system.
 * **Scan to folder:** Uses SMB (Server Message Block) to send files to a Microsoft share.
 * **Scan to cloud:** Stores scans in a cloud account such as Google Drive or Dropbox.
 
+---
 
 ## Laser Printer Maintenance
 
+Laser printers combine a laser, high voltage, charged ions, powdered ink, heat, and paper.
 
+They produce very high-quality output.
 
-Combine a laser, high voltage, charged ions, powdered ink, heat, and paper
+They print quickly.
 
-Very high quality
-
-Fast printing speeds
-
-Very complex 
+They are very complex.
 - Many moving parts
 - Requires on-printer memory and processing
 - Messy on the inside
 
 Corona wire or charge roller negatively charges the drum
 
-The laser neutralizes the neagtive charge
+The laser neutralizes the negative charge.
 
-Negatievly-charged toner sticks to the areas marked by the laser
+Negatively charged toner sticks to the areas marked by the laser.
 
 Toner on the drum is transferred to the paper
 
-The fuser uses heat and pressure to melt toner to the page
+The fuser uses heat and pressure to bond toner to the page.
 
 The drum is cleaned for another pass
 
-Replacing the toner catridge
+Replacing the toner cartridge
 
-Look for the messages 
+Check the printer messages.
 - Low doesn't mean empty
 
 The toner can also contain the OPC drum
-- Orgainc photoconductor drum
+- Organic photoconductor drum
 - Sensitive to light; keep it in the bag
 
 Power down the printer
-- Safety first 
+- Safety first
 
-Remove pakcing strips from the new drum
-- Replace it with the old
+Remove the packing strips from the new drum.
+- Replace the old drum.
 
 Laser printer maintenance kit
 
@@ -3132,7 +2370,7 @@ Standard maintenance kits
 - Replacement feed rollers, new fuser unit, etc
 
 When to perform maintenance?
-- Check th printer's page counter
+- Check the printer's page counter.
 
 Power down and replace the components
 - Fuser units are HOT
@@ -3141,18 +2379,18 @@ Reset the page counter when you're done!
 
 Laser printer calibration
 
-Different toner cartidges print with different densities
+Different toner cartridges print with different densities.
 - Some dark, some light
 
 Laser printer calibration can adjust the density
-- makes it looks perfectM
+- Adjust the density until the output looks correct.
 Can be automated or a manual process
-- Every printer is different 
+- Every printer is different
 - Check the printer manual
 
 Laser printer cleaning
 
-laser printers are dirty
+Laser printers are dirty.
 - All that toner and paper dust
 - Toner should be handled properly
 
@@ -3160,346 +2398,142 @@ Check manufacturer's recommendations
 - Water, isopropyl alcohol (IPA)
 - Don't use harsh chemicals
 
-Ouside- damp cloth
+Outside: use a damp cloth.
 
-Inside - wipe dust away
+Inside: wipe away dust.
 - Don't use a normal vacuum cleaner or compressed air
 - Wash toner from skin with cold water
 - Clean rollers with IPA
 
+---
 
+## Inkjet Printers
 
+Inkjet printers disperse ink onto paper. They are relatively inexpensive, quiet, and capable of high-resolution output, but their proprietary ink can be costly. Prints may fade, and the print heads can clog.
 
+### Ink cartridges and print heads
 
+Cartridges supply ink to the print head, which places drops of ink on the page.
+- CMYK stands for cyan, magenta, yellow, and key (black).
+- Some consumer printers integrate the print head into the cartridge, so replacing the cartridge also replaces the print head.
+- Other printers use separate ink cartridges and print heads.
 
-## Inkject Printers
+### Feed rollers and duplexing
 
+Feed rollers pull paper through the printer and must be kept clean and in good condition.
+- Duplexing prints on both sides of the paper and is included with some printers.
 
-Ink-dispersion printer
-
-Relatively inexpensive technology
-
-Quiet
-
-High resolution
-
-Expensive ink
-- Proprietary
-
-Eventually fades
-
-Clogs easily
-
-Ink cartidge
-
-Place drops of ink onto a page
-- Pulled from a set of cartidges
-
-CMYK
-- Cyan, Magenta, Yellow, Key(Black)
-
-Print head
-
-Some consumer printers integrate the print head into the ink cartridge
-- Change the cartridge, get a new print head
-
-Others seperate the ink cartridge from the print head
-
-Feed rollers
-
-Pick up and feed paper through the printer
-- Must be clean and not worn
-
-Duplexing
-- Print on both sides of the paper
-- Included with some printers
-
-
-
-
-
+---
 
 ## Inkjet Printer Maintenance
 
+### Cleaning print heads
 
+Print heads use small ink droplets and nozzles, which can clog.
+- Many printers clean the heads automatically each day.
+- Streaks or missing colors can indicate a clog.
+- A cleaning cycle can also be started manually and usually takes a few minutes.
+- If the print head or cartridge is removable, manual cleaning may help; follow the printer's instructions.
 
-Cleaning print heads
+### Replacing and aligning inkjet cartridges
 
-Small droplets of ink
-- And small holes in a print head
+Cartridges usually contain separate colors: cyan, magenta, yellow, and key (black), although some combine colors.
+- Replacing a cartridge takes seconds; calibration and preparation may take a few minutes.
+- Recycle empty cartridges where possible.
+- Align the nozzles so printed lines are crisp and colors line up. Use the printer's calibration option and make small adjustments if needed.
 
-Clogged heads is a big issue
-- Many printers automatically clean every day
-- Output has streaks or sections of missing color
+### Clearing paper jams
 
-Cleaning process can be started manually
-- Only takes a few minutes
+Paper jams are common because paper travels through many turns and rollers.
+- Remove the tray and any loose paper.
+- Pull jammed paper firmly along the paper path without tearing it.
+- Check for and remove all scraps of paper.
 
-Some print heads/cartridges can be removed
-- Manually cleaning may help
-
-Replacing inkjet cartridges
-
-Usually seperate colors
-- Cyan, Magenta, Yellow, and Key (CMYK)
-- Some cartridges will combine these
-
-Takes seconds to replace
-- Takes a few minutes to calibrate and prepare the cartridge
-
-Recycle the empty cartridge
-- All plastic
-
-Align nozzles to the paper
-- Lines should be crisp
-- Colors should align
-
-Printers includes a calibration option
-- May need to make minor adjustments
-
-Clearing Jams
-
-Lots of turns and twists
-- A jam is inevitable
-
-Remove tray paper
-- Any loose paper
-
-Remove paper from the path
-- Firm pressure, don't rip
-
-Check for any scraps of paper
-- Remove all loose paper
-
-
-
-
-
+---
 
 ## Thermal Printers
 
+Thermal printers use heat-sensitive paper that darkens when heated, so they require no ink. They are very quiet and are commonly used for receipts and labels.
 
+### Thermal paper and print mechanism
 
-White paper
-- Turns black when heated
-- No ink!
-- Common as a reciept or label printer
+Thermal paper is coated with a thermochromic chemical that changes color when heated.
+- The paper is sensitive to light and heat; keep it away from hot areas and clear tape.
+- Thermal printers use a feed assembly and a full-length heating element rather than a moving print head.
+- The paper looks similar to ordinary paper but may feel different.
+- Common uses include cash registers and credit-card terminals.
 
-Very quiet
-- Almost silent
+---
 
-Paper is sensitive to light and heat
-- Any clear tap
+## Thermal Printer Maintenance
 
-Feed assembly
+### Thermal printer maintenance
 
-Pull paper through the printer
-- Releatively small paper path
+Thermal paper is inexpensive but cannot be substituted with ordinary printer paper. Keep track of the required roll size; replacement is usually a simple feed process.
 
-Heating Element
+Clean the heating element with a recommended liquid cleaner, such as isopropyl alcohol (IPA), or a cleaning pen.
+- Check the manufacturer's recommendations and swab small areas gently.
+- A cleaning card can clean the print head and paper path.
 
-Full length heating element
-- No moving print head
+Remove paper bits and dust by taking the printer outside and blowing it out, then wiping it with a damp cloth.
+- Avoid using a vacuum unless it is designed for computers and protects against static discharge.
 
-Thermal Paper
+Excessive heat can darken the entire page. Keep thermal paper away from car dashboards, radiators, and hair dryers.
+- Receipts fade over time, so thermal paper is not suitable for archival storage.
 
-paper covered with a chemical
-- Thermochromic paper/thermal paper
-- Changes color when heated
-
-Cash registers, credit card terminals
-- Quiet areas
-
-Looks like normal paper
-- Feels a bit different
-
-
-
-
-
-
-## Thermal Printers Maintenance
-
-
-
-Thermal paper replacement
-
-Relatively inexpensive
-- But impossible to substitute
-
-Different sizes
-- Not like laser printer paper
-- Keep a list
-
-Actual replacement process is easy
-- Simple paper feed
-- Small device
-
-Cleaning the heating element
-
-Liquid cleaner
-- IPA
-- Get a cleaning pen
-- Check manufacturer's recommendations
-
-Swab gently
-- Usually small areas
-
-Use a clenaing card
-- Clean the head
-- And paper pathways
-
-Removing debris
-
-Relatively small amount
-- Paper bits and dust
-- No toner!
-
-Blow out the printer
-- Take it outside
-
-Wipe it out
-- Damp cloth
-
-Avoid using a vacuum
-- Unless it's designed for computers
-    Resist static buildup/discharge
-
-Pper sensitivity to heat
-
-Heat is used to creat the output on the thermal paper
-- More heat will darkey the entire page
-
-Avoid hot areas
-- Car dashboard
-- Radiator
-- Hair dryers
-
-Reciept will aslo fade over time 
-- Don't use as archival media
-
-
-
-
-
+---
 
 ## Impact Printers
 
+Dot-matrix printers are impact printers that use a print head with a matrix of pins to strike an inked ribbon against the paper.
+- They are useful for carbon or multipart copies and have a low cost per page.
+- They are noisy, produce limited graphics, and are now used in niche situations.
 
+### Dot-matrix print head and ribbon
 
-Dot-matrix (impact) printers
+The print head moves back and forth across the page while its pins strike the ribbon and paper.
+- The fabric ribbon is a continuous loop, often supplied as a single modular unit.
+- Ribbon sizes may be specific to the printer model.
 
-Print hear with a small matrix of pins
-- Presses against a ribbion to make a mark on paper
+### Tractor feed and multipart paper
 
-Good for carbon/multiple copies
+Tractor-feed printers pull continuous paper through perforations along the paper edges rather than relying on friction.
 
-Low cost per page
+Multipart paper produces multiple copies of a form in one pass without carbon paper.
+- Impact on the top sheet activates micro-encapsulated ink on its back and a clay coating on the sheet below.
+- These inks, dyes, and coatings can cause mild irritation in some chemical combinations.
+- Multipart paper and dot-matrix printers can be difficult to find, so printing another copy may be easier and less expensive.
 
-Noisy
-
-Poor graphics
-
-Relatively niche use cases
-
-Dot-matrix printer head
-
-Moves back and forth
-- Pins hit ribbon and paper
-
-One matrix
-- Must move across the page to print
-
-Printer ribbon
-
-Fabric
-- One long ribbon
-- Never ending circle
-
-Easy to replace
-- One single unit
-
-Proprietary size
-- Specific to printer model
-
-Tractor Feed
-
-Continuous paper feed
-- Perofrations between pages
-
-Paper pulled through with holes on the side of the paper
-- Instead of using friction
-
-Multipart paper
-
-Carbonless copying
-- Mulitple copies of a single form in a single pass
-
-Impact with the top sheet is duplicated on pages underneath
-- Micro-encapsulated ink on the back of the first sheet
-- Clay surface reaction on the top of the second sheet
-
-Impact activates these inks, dyes, and clay
-- Can be a mild irritation with certain chemical combinations
-
-Easier and less expensive to just print another copy
-- May be difficult to find multipart paper in use
-- Or dot matrix printers
-
-
-
-
-
+---
 
 ## Impact Printers Maintenance
 
+### Replacing the ribbon
 
+Replace the ribbon when the print becomes too light because its ink is eventually consumed.
+- Most ribbons are modular and can be replaced in less than a minute.
 
-Printer Ribbon Replacement
+### Replacing the print head
 
-Single ribbon
-- Self contained
-- One long circle
+The print head takes considerable wear because it repeatedly strikes the ribbon and paper. It also becomes hot, so use care when handling it.
+- Look for a release lever or bar to remove the modular print head.
+- Use a compatible ribbon and print head to maintain output quality.
 
-Replace when ink becomes too light
-- Ink is eventually consumed
+### Replacing paper
 
-Designed to be modular
-- Replace in less than a minute
+Loading paper is more exacting than with a laser printer.
+- Align tractor-feed paper with the feed holes.
+- Position forms so the text fits the predefined space.
+- Ensure the paper can feed freely and that nothing blocks the path.
 
-Print head replacement
-
-Takes a lot of abuse
-- Directly hits the ribbon and paper
-
-Gets hot
-- Watch your fingers
-
-Another modular part
-- Look for a release lever or bar
-
-Replace with the ribbon for the best effect
-- The output should look perfect
-
-Replacing paper
-
-Not as easy as a laser printer
-- Paper must be feed perfectly into holes
-    Tractor feed
-
-Forms must be positioned correctly
-- Text needs to fit a predefined apce
-
-Paper must feed without constraint
-- make sure nothing is in the way
-
-
+---
 
 ## Virtualization and cloud computing (11%)
 
 Virtualization concepts include virtual machines, hypervisors, and desktop virtualization. Cloud models include IaaS, SaaS, and PaaS.
 
-    
+---
+
 ## Virtualization Concepts
 
 One computer can run multiple operating systems, such as macOS, Windows 11, and Ubuntu Linux, at the same time.
@@ -3527,8 +2561,7 @@ A sandbox is an isolated testing environment with no connection to the real worl
 * Run different operating systems at the same time and move between them without rebooting.
 * Save time and resources by using one physical computer.
 
-
-
+---
 
 ## Virtualization Services
 
@@ -3585,111 +2618,104 @@ A container is a standardized, portable unit of software that contains an applic
 * Runs as an isolated process in a sandbox so apps cannot interact with each other.
 * Container images are lightweight, use the host kernel, and provide separation between applications.
 
-
-
+---
 
 ## Cloud Models
 
 ### Cloud computing
 
 More than just a server hosted elsewhere
-- Extend the management of applications and services
+- Extends the management of applications and services
 
 Effectively unlimited resources
 - You just have to pay for it
 
-Deploy an infrastructure in minutes
-- Create and tear down as you need
+Deploy infrastructure in minutes.
+- Create and tear it down as needed.
 
 International scope
-- Deploy in psecific parts of the world
+- Deploy in specific parts of the world.
 
 Use only the required resources
-- Cost is based on the amount you use
+- Costs are based on the amount you use.
 
-Cloud deployemnt models
+Cloud deployment models
 
-Public 
-- Available to everyone over the internet
+Public
+- Generally available over the internet.
 
-Private 
-- Your own virtualized local data center
+Private
+- Your own virtualized local data center.
 
-Hybrid 
-- A mix of public and private 
+Hybrid
+- A mix of public and private clouds.
 
 Community
-- Serveral organizations share the same resources
+- Several organizations share the same resources
 
 Infrastructure as a Service (IaaS)
 
 Sometimes called hardware as a service (HaaS)
-- Outsaource your equipment
+- Outsource your equipment
 
-Your're still responsible for the management
-- And for the security
+You're still responsible for management and security.
 
-Your data is out there, but more within your control
+Your data is hosted remotely, but remains more within your control.
 
-Web server providers
+Web server providers are one example of infrastructure as a service.
 
 Software as a Service (SaaS)
 
 On-demand software
 - No local installation
-- Why manage your own email distribution? or payroll?
+- Why manage your own email or payroll systems?
 
-Central management of data and applications
-- Your data is out there
+Data and applications are managed centrally.
+- Your data is hosted by the provider.
 
 A complete application offering
 - No development work required
 - Google Mail, Microsoft 365
 
-Platofrm as a Service (PaaS)
+Platform as a Service (PaaS)
 
 No servers, no software, no maintenance team, no HVAC
 - Someone else handles the platform, you handle the development
 
-You don't have direct control of the data, people, or infrastructure
-- Trained security professionals are watching your stuff
-    Choose carefully
+You don't have direct control of the data, personnel, or infrastructure.
+- The provider handles the platform; trained security professionals monitor it.
+  - Evaluate the provider and its security controls carefully.
 
 Put the building blocks together
-- Develop your app from wha't available on the platform
-- Sales.Force.com
+- Develop your app using the building blocks available on the platform.
+- Salesforce.com
 
 Responsibility matrix
 
+---
 
-
-
-
-
-## Cloud Charatceristics
-
-
+## Cloud Characteristics
 
 Shared resources
 
 Internal/private cloud
 - Dedicated resources
 - Build your own cloud
-- Pay for everythingup front
+- Pay for everything up front
 - No ongoing costs
 
 External/public cloud
-- Shared resources witha publlic cloud
+- Shared resources with a public cloud
 - Underlying infrastructure owned by a third party
-- Cost may be metered or up front 
+- Costs may be metered or paid up front.
 
 Metered and non-metered
 
 Metered utilization
 - You pay for what you use
-- Cost to upload - ingress traffic
+- Cost to upload (ingress traffic)
 - Cost to store
-- Cost to download - egress traffic
+- Cost to download (egress traffic)
 
 Non-metered utilization
 - You pay for a block of storage
@@ -3704,32 +2730,27 @@ Elasticity
 
 Availability
 - Systems are always available
-- Redundancy provides availiability
+- Redundancy provides availability.
 
 File synchronization
 - Information can be duplicated across cloud locations
 
 Multitenancy
-- Many different clients are using the same cloud infrastructure
+- Many different clients use the same cloud infrastructure.
 
-
-
-
-
+---
 
 ## Troubleshooting Hardware
 
+POST (power-on self-test)
 
-
-POST (Power on Self Test)
-
-test major system components ebfore booting the operating system
+Tests major system components before the operating system boots.
 - Main system (CPU, BIOS)
 - Video
 - Memory
 
-Failures are usually noted with beeps and/or codes
-- BIOS versions can differ, check your documentation
+Failures are usually indicated by beeps or codes.
+- BIOS versions can differ, so check your documentation.
 
 Don't bother memorizing the beep codes
 - They're all different between manufacturers
@@ -3742,1076 +2763,540 @@ Blank screen on boot
 - Bad video, bad RAM, bad CPU
 - BIOS configuration issue
 
-BIOS time and setting
+BIOS time and date settings
 - Maintained with the motherboard battery
 - Replace the battery
 
-Attempts to boot to incorrect device
-- Set boot order in BIOS configuration
-- Confirm that the startup device has a valid operating system
-- Check for media in a startup device
+### Incorrect boot device
 
-Crash screens 
+If the system attempts to boot from the wrong device:
+- Set the boot order in the BIOS.
+- Confirm that the startup device has a valid operating system.
+- Check for removable media in the startup device.
 
-Windows Stop Error
+### Crash screens
 
-blue Screen of Death
-- You don't want this
+Windows stop errors, including the Blue Screen of Death (BSOD), indicate serious system problems.
 
-Contains important information
-- Also written to event log
+Crash screens contain important information and may also be written to the event log.
 
-Bluescrrens and shutdowns
+### Blue screens and shutdowns
 
-Startup and shutdown BSOD
-- Bad hardware, bad drivers, bad application
+BSODs during startup or shutdown may be caused by faulty hardware, drivers, or applications.
 
-Use last known good, system restore, or rollback driver
-- Try Safe Mode
+Try Last Known Good Configuration, System Restore, or rolling back a driver.
+- You can also try Safe Mode.
 
-Reseat or remove the hardware
-- If possible
+Reseat or remove the hardware, if possible.
 
-Run hardware diagonstics
-- Provided by the manufacturer
-- BIOS may have hardware diagnostics
+Run hardware diagnostics provided by the manufacturer; the BIOS may also include diagnostic tools.
 
-Proprietary crash screens
+### Application crash screens
 
-Every application has their own notifications
-- Some are very informational
-- Some are quite bad
+Applications have their own error notifications, and the amount of useful information varies.
 
-The quality of information contained in a help desk ticket can vary
-- Get as many details as possible
+Help desk tickets vary in quality, so collect as many details as possible.
 
-A detailed transcript of the error would be valuable
-- Screenshots are even better
-- Ask for the screenshot in the ticket instructions
+A detailed transcript of the error is useful, and screenshots can provide even more information.
+- Ask users to include screenshots in ticket instructions.
 
-Blank screen 
+### Blank screen
 
-Is the monitor connected?
-- We wouldn't ask if it wasn't a common solution
-- Check both power and signal cable
+First, confirm that the monitor is connected; check both the power and signal cables.
 
-Input selection on monitor
-- HDMI, DisplayPort, DVI, VGA
+Check the monitor's selected input: HDMI, DisplayPort, DVI, or VGA.
 
-Image is dim
-- Check brightness controls
+If the image is dim, check the brightness controls.
 
-Swap the monitor
-- Try the monitor on another computer
+Try the monitor on another computer to determine whether the monitor is faulty.
 
-No video after Windows load
-- Use VGA mode (F8)
+If video fails after Windows loads, try VGA mode (F8).
 
-No power
+### No power
 
-No Power
-- No power at the source
-- No power from the power supply
-- Get out your multimeter
+Check for power at the source and from the power supply. Use a multimeter if needed.
 
-Fans spin - no power to other devices
-- Where is you r fan power connected?
-- No POST - bad motherboard?
-- Case fans have lower voltage requirements
-- Check the power supply output
+### Fans spin, but other devices have no power
 
-Sluggish performance
+Check where the fans are connected and verify the power-supply output.
+- If the system does not POST, the motherboard may be faulty.
+- Case fans may have lower voltage requirements than other components.
 
-Task Manager
-- Check for high CPU utilization and I/O
+### Sluggish performance
 
-Windows Update
-- Last patches and drivers
+Use Task Manager to check for high CPU utilization and disk I/O.
 
-Disk Space
-- Check for available space and defrag
+Install the latest Windows updates and drivers.
 
-Laptops may be using power-saving mode
-- Throttles the CPU
+Check available disk space and defragment a hard disk if appropriate.
 
-Anti-virus and anti-malware
-- Scan for bad guys
+Power-saving mode on a laptop may throttle the CPU.
 
-Overheating
+Run an antivirus or anti-malware scan.
 
-Heat Generation
-- CPUs, video adapters, memory
+### Overheating
 
-Cooling system
-- Fans and airflow
-- Heat sinks
-- Clean and clear
+CPUs, video adapters, and memory generate heat.
 
-Verify with monitoring software
-- Built in BIOS 
-- Try HWMonitor
-    http://www.cpuid.com/
+Check that fans, airflow, and heat sinks are clean and unobstructed.
 
-Smoke and burning smell
+Verify temperatures with monitoring software built into the BIOS or with a utility such as HWMonitor: <http://www.cpuid.com/>.
 
-Electrical problems
-- The smoke makes everything work
+### Smoke or burning smell
 
-Always disconnect power
-- There should never be a burned odor
+Smoke or a burning smell may indicate an electrical problem.
 
-Locate bad components
-- Even after the system has colled down
-- Replace all damaged components
+Disconnect power immediately; a computer should not produce a burning odor.
 
-Random Shutdown
+After the system has cooled, locate and replace all damaged components.
 
-No warning, black screen
-- May have some details in your Event Viewer
+### Random shutdowns
 
-Heat related issue
-- High CPU or grahics, gaming
-- Check all fans and heat sinks
-- BIOS may show fan status and temperatures
+An unexpected shutdown may produce a black screen without warning. Check Event Viewer for details.
 
-Failing hardware
-- Has anything changed?
-- Check Device Manager, run diagnostics
+The cause may be heat, especially during gaming or other CPU- and graphics-intensive tasks.
+- Check all fans and heat sinks.
+- The BIOS may show fan status and temperatures.
 
-Could be anything
-- Eliminate what's working
+Failing hardware is another possibility. Check for recent changes, review Device Manager, and run diagnostics.
 
-Application crashes
+Many issues are possible; eliminate components and causes that are working correctly.
 
-Application stops working
-- May provide an error message
-- May just disappear
+### Application crashes
 
-Check Event Viewer or logs
-- Often includes useful reconnaissance
+An application may stop working, display an error, or close without warning.
 
-Check the realiability monitor
-- A history of application problems
-- Checks for resolutions
+Check Event Viewer and other logs for diagnostic information.
 
-Reinstall the application
-- Contact application support
+Check Reliability Monitor for a history of application problems and possible solutions.
 
-Unusal Noises
+Reinstall the application or contact its support team.
 
-Computers should hum
-- Not grind
+### Unusual noises
 
-Rattling
-- Lose components
+Computers should hum, not grind or make other unusual noises.
 
-Scraping 
-- Hard drive issues
+Rattling may indicate loose components.
 
-Clicking
-- Fan problems
+Scraping may indicate a hard-drive problem.
 
-Pop 
-- Blown capacitor
+Clicking may indicate a fan problem.
+
+Popping may indicate a blown capacitor.
 
 ### Inaccurate system date and time
 
 * A bad motherboard battery is a common cause; it is often a button-style battery.
 
-A bad battery will require a BIOS configuration or date/time configuration on every boot
+A bad battery may require you to reconfigure BIOS settings or the date and time on every boot.
 
-On older systems, can reset the BIOS configuration by removiing the battery
-* Newer computers use a jumper
+On older systems, reset the BIOS configuration by removing the battery.
+* Newer computers use a jumper.
 
+---
 
 ## Hardware and network troubleshooting (28%)
 
-    Diagnosing issues: identifying and fixing hardware, network and connectivity problems.
-    Troubleshooting tools: using multimeters, cable testers, and loopback plugs.
+- Diagnosing issues: Identify and fix hardware, network, and connectivity problems.
+- Troubleshooting tools: Use multimeters, cable testers, and loopback plugs.
 
-
-
+---
 
 ## Troubleshooting Storage Devices
 
+### Storage failure symptoms
 
+#### Read/write failures
 
-Storage failure symptoms
+An error such as "Cannot read from the source disk" may indicate a drive problem.
 
-Read/write failure
-- "Cannot read from the source disk"
+#### Slow performance
 
-Slow performance
-- Constant LED activity
-- Rety.. Retry.. Retry
+Constant drive activity and repeated retries can indicate a failing or overloaded drive.
 
-Loud clicking noise
-- The click ofdeath
-- May also include grinding and scraping
+#### Clicking or grinding noises
 
-Grinding noises
+Loud clicking, grinding, or scraping can indicate mechanical failure in a hard drive.
+- Hard drives contain spinning platters and moving actuator arms, so a small mechanical problem can cause failure.
+- Metal-on-metal contact can cause poor performance or make the drive inaccessible.
+- Recovery can be difficult; restore from a recent, well-maintained backup.
 
-hard drives are mechanical devices
-- Spinning drives (often 5,400 RPM and higher)
-- Moving actuator arms
+### Troubleshooting disk failures
 
-Very high tolerances
-- One small problem can cause the drive to fail
+If possible, back up important data first. A failing drive may deteriorate quickly.
+- Check for loose or damaged cables.
+- Check for overheating, especially if problems occur after startup.
+- Check the power supply, particularly if new devices were recently added.
+- Run diagnostics from the drive or computer manufacturer, preferably on a known-good computer.
 
-Metal on metal
-- Clicking or grinding 
-- Poor performance, or no access at all
+### Boot failure symptoms
 
-Difficult to recover from this issue
-- Time to get you rwell managed and very recent backup
+If the drive is not recognized or the computer reports "Boot device not found," note any indicator lights, beeps, or error messages.
+- If the operating system is not found, confirm that the drive is detected.
+- Check cables and other physical connections.
+- Check the BIOS boot sequence for removable disks, such as USB drives, and disabled storage interfaces.
+- For a new installation, verify data and power cables and try a different SATA interface.
+- Test the drive in another computer if possible.
 
-Troubleshooting disk failures
+### Data loss or corruption
 
-Get a backup (if possible)
-- First thing - a bad drive is bad
+Hard drives are mechanical and will eventually fail. Repairs can be difficult, expensive, and unsuccessful.
+- An SSD may stop working; sometimes it can read data but cannot write it.
+- Lost or corrupted data may be impossible to recover.
+- Always maintain a backup.
 
-Check for loose or damaged cables
+### RAID failures
 
-Check for overheating
-- Especially if problems occur after startup
+A drive failure in a RAID array may be caused by hardware, power, or communication problems.
+- Failures may be indicated by error messages, email notifications, or audible alarms.
+- Carefully analyze the array, including its drives and volumes.
 
-Check power supplu 
-- Especially if new devices were added
+### S.M.A.R.T. monitoring
 
-Run hard drive diagnostics
-- From the drive or computer manufacturer
-- Perferably on a known-good computer
+Self-Monitoring, Analysis, and Reporting Technology (S.M.A.R.T.) can help identify warning signs before a drive fails.
+- Use a third-party utility or tools built into the drive array.
+- Monitor metrics over time for changes or increasing values; monitoring may be provided by a NAS or other software.
+- Configure automated email, text, or console notifications.
+- Back up data and replace a failing drive before it causes an outage.
 
-Boot failure symptoms
+### Extended read/write times
 
-Drive not recognized, Boot device not found
-- Lights (or no lights)
-- Beeps
-- Error message
+Reading and writing data involves memory access, bus communication, drive access, and transfers to or from storage. Delays can occur at any point.
+- Input/output operations per second (IOPS) is a broad measure of storage performance.
+- It can help compare drives; for example, a hard drive may provide about 200 IOPS, while an SSD may provide 1,000,000 IOPS.
 
-Operating system not found
-- The drive is there
-- Windows is not
+### Missing drives
 
-Check your cables
-- Physical problems
+If the operating system starts normally but other drives are missing, check the BIOS.
+- Internal drives may have failed or become disconnected.
+- External drives may lack power or have a faulty cable.
+- Network shares may be connected at startup, reconnected at sign-in, or mapped by a login script.
 
-Check boot sequence in BIOA
-- Check for removable disks (especially USB)
-- Check for disabled storage interfaces
+### Missing RAID array
 
-For new installation, check hardware configuration
-- Data and power cables
-- Try different SATA interfaces
+A missing array may indicate a missing or faulty RAID controller.
 
-Try the drive on a different computer
+---
 
-Data loss/corruption
+## Troubleshooting Display Issues
 
-Hard drives are mechanical devices
-- They will eventually fail
+### Incorrect input source
 
-Repairs are difficult and expensive
-- Dust-free enviroment
-- Not always successful
+Confirm that the monitor is connected and that both the power and signal cables are secure.
+- Select the correct monitor input: HDMI, DVI, VGA, or DisplayPort.
+- If the image is dim, check the brightness controls.
+- Test the monitor on another computer to determine whether the monitor is faulty.
+- If video fails after Windows loads, try VGA mode (F8).
 
-An SSD may simply stop working
-- Sometimes canread but not write
+### LCD projector bulbs
 
-Data becomes unavailable or corrupted
-- Can be impossible to recover
+LCD projectors use bright metal-halide bulbs that can operate at around 1,000 degrees Celsius.
+- Fans cool the bulb during operation and continue cooling it after the light is turned off.
+- The projector may shut down if temperatures become too high.
+- When replacing a burned-out bulb, clean dust from the air filters and external air intakes and outlets.
 
-ALWAYS HAVE A BACKUP
+### Fuzzy image
 
-RAID failure
+An LCD display has a fixed number of pixels. It looks best when the video settings match its native resolution; a mismatch can cause distortion.
+- When changing resolution, try a multiple of the native resolution.
+- For example, 2560 x 1600 and 1920 x 1200 have the same aspect ratio.
 
-A drive in a RAID array has failed
-- Hardware failure
-- Power issue
-- Communication issue
+### Burn-in and image sticking
 
-Almost always very obvious
-- Error messages
-- Email notifications
-- Audible alarms
+Burn-in can affect different monitor types. Some displays shift pixels to reduce the effect, often without the user noticing.
+- LCDs can experience image sticking; displaying a white screen for an extended period may help remove it.
 
-A careful analysis is required
-- Many drives
-- Different volumes
+### Dead pixels
 
-S.M.A.R.T
+A dead pixel may remain black because of a manufacturing defect; it is usually not caused by a cable or power issue.
+- Clean the monitor screen with a damp cloth.
+- If the defect persists, the monitor may need to be replaced.
 
-Self-Monitoring, Analysis, and Reporting Technology
-- Use third party utilities
+### Flickering screen
 
-Avoid hardware failure
-- Look for warning signs
+Check the video-cable connections; a loose cable can cause signal loss.
+- Replace the cable if needed.
+- Test another display to determine whether the monitor is faulty.
+- Confirm that the operating-system display settings match the monitor.
 
-Schedule disk checks
-- Built in to most drive arrays
+### Incorrect color
 
-Warning signs
-- Replace a drive
+If colors are inaccurate, check the monitor's tint, color presets, and factory-reset options.
+- Check the graphics driver configuration.
+- If the display looks too blue, check the operating system's Night light settings.
 
-Monitoring SMART metric over time
-- Watch for changes or incrementing values
-- May be part of a NAS or third party software
+### Audio issues
 
-Automated notifications
-- Email
-- Text message
-- Console notifications
+If the monitor's speakers have no sound or low volume, check the monitor's audio controls, volume, and mute status.
+- Confirm that audio is sent over HDMI, DisplayPort, or Thunderbolt by checking the operating system's selected output.
+- If the monitor has other audio inputs, check its audio jacks.
 
-Resolve the issue before it's a problem
-- Get a good backup
-- Replace the bad drive
+### Dim image
 
-Etended read/write times
+Check the monitor's brightness and contrast settings.
+- Check operating-system settings for auto-dimming, battery dimming, or driver controls.
+- A backlight problem may affect all or only part of the screen.
 
-A lot happens when reading or writing data
-- Memory access, communication across the bus, spinning drive access, writing or reading the data to the storage device, et.
+### Image quality and geometry
 
-Delays can occur anywhere along the way
-- Need a way to measure storage device access
+Flickering or incorrect color patterns may still allow limited use, but should be investigated.
+- Check the cable pins, especially if a color is missing.
+- Confirm that the operating-system refresh rate and resolution match the display specifications.
+- Check or replace the cable and troubleshoot the video driver; disabling hardware acceleration may help isolate a software issue.
 
-Input/Output operations per second (IOPS)
-- A broad metric of maximum performance
+### Sizing and scaling
 
-Useful for comparing storage devices
-- Hard drive: 200 IOPS
-- SSD: 1,000,000 IOPS
+The display may scale the video output to fit the screen. Check the monitor's scaling options.
+- Adjust the operating-system resolution and scaling settings to change the size of the user interface and icons.
 
-Missing drives in OS
+### Distorted image
 
-OSboots normally
-- Other drives not shown
-- Check the BIOS
+Lines, flashing colors, or blocks may indicate a hardware or software problem.
+- LCD panels are fragile; a damaged panel usually needs replacement.
+- Check for a faulty cable or adapter.
+- Check for a faulty video driver.
 
-Internal drives 
-- Bad drive or disconnected cable
-
-External drives
-- No power to the drive or bad cable connection
-
-Network shares
-- Shared drives can be connected during startup
-- Options to reconnect at sign in
-- Connected with login script
-
-Array missing
-
-Missing or faulty RAID controller
-
-
-
-
-
-
-## Troubleshooting Dispaly Issues
-
-
-
-Incorrect input source
-
-Is it connected?
-- We wouldn't ask if it wasn't a real solution
-- Check both power and signal cable
-
-Input selection on monitor
-- HDMI, DVI, VGA, DisplayPort
-
-Image is dim
-- Check brightness controls
-
-Swap the monitor
-- Try the monitor on another computer
-
-No video after Windows loads
-- Use VGA mode (F8)
-
-LCD projector bulbs
-
-LCD projectors and heat
-- Very bright metal-halide bulbs
-- Operate at around 1,000 degrees Celsius
-
-Cooling is always an issue
-- Fans constantly cool the bulb
-- Shuts down if temperatures are high
-- Fan cools bulbs slowly after light is off
-
-Replace a burnt out bulb
-- And clean dust from the air filters and external air input/output
-
-Fuzzy image
-
-An LCD display is fixed
-- The number of pixels doens't change
-
-A display looks best when the video settings match a display's native resolution
-- A mismatch can cause distortion
-
-If changing the dispay resolution, try using a multiple of the native resolution 
-- 2560x1600 is the same ratio as 1920x1200
-
-Burn in 
-
-A problem across all monitor types
-- Some displays will pixel shift
-- you probably won't notice it
-
-LCDs have "image sticking"
-- Try to remove by displayin a white screen for an extended period
-
-Dead pixels
-
-Always black 
-- A manufracturing defect
-
-This probably isn't a problem on your side
-- Not a cable or power issue
-
-Clean the monitor screen
-- Damp cloht
-
-You'll have to replace the monitor
-- No other options
-
-Flashing screen
-
-Check the video cable connections
-- A loose cable will cause loss of signal
-
-Replace the video cable
-- Usually a quick fix
-
-The problem could be with the monitor
-- Try switching the display
-
-Confirm the display settings in the operating system 
-- May not match the monitor
-
-Incorrect color display
-
-Colors may not be properly represented
-- Too much red, green blue, yellow etc
-
-Monitor settings
-- Tint
-- Custom color presets
-- Factory Reset
-
-Driver configuration
-- Color tint
-
-OS configuration - Very blue
-- Night light settings
-
-Audio issues
-
-Many monitors include speakers
-- No sound, low volume
-
-Monitor may have audio controls
-- Check volume levels and mute status
-
-Confirm audio input over HDMI, DisplayPort, or Thunderbolt
-- Check the HDMI audio output in the OS
-
-The monitor may support other audio input interfaces
-- Check for audio jacks
-
-Dim Image
-
-Monior video settings
-- Brightness
-- Contrast
-
-Check the OS
-- Auto dimming
-- Dim on battery power
-- Driver settings
-
-Backlight feature
-- Some or all of the light
-- May only be a section of the screen
-
-Image quality problems
-
-Flickering, color patterns incorrect
-- you can almost wokr with this
-
-Check the cabl epins
-- Especially if missing a color
-
-Distorted image and geometry
-- Check the OS refresh rate and resolution settings
-- Need to match the display specifications
-- Check or replace cable
-
-Disable hardware acceleration
-- Troubleshoot with the software drivers
-
-Sizing issues
-
-The video output
-- The display may scale to fit the image (or not)
-- Check the display for a scaling option
-
-The size of the user interface and icons
-- Modify the OS resolution settings
-- Change the scaling options
-
-Distorted image
-
-Lines, flashing colors, blocks
-- Difficult to see
-
-Hardware failure
-- LCD panels are very easy to break
-- No easy fix - replace the display
-
-Other hardware
-- Bad cable
-- Bad cable adapter
-
-Software configuration
-- Bad video driver
-
-
-
-
-
+---
 
 ## Troubleshooting Mobile Devices
 
+### Battery health and reception
 
+Replace an aging battery; batteries can only be recharged a limited number of times.
+- Poor reception may cause a device to search constantly for a signal. Check that Airplane mode is off.
+- Disable unnecessary features such as Wi-Fi, Bluetooth, or GPS when appropriate.
+- Check application battery usage in Settings > Battery on iOS/iPadOS or Android.
 
-Poor battery health
+### Swollen or faulty batteries
 
-Replace aging batter
-- there's only so many recharges
+A swollen battery may contain built-up gas and is designed to contain it.
+- Do not open the battery pack or container because this creates a significant fire risk.
+- Stop using a faulty battery and dispose of it properly; device damage is preferable to a fire.
 
-Bad recpetion
-- Always searching fro signal
-- Airplane mode on the ground
+### Broken screens
 
-Disable unnecessary features
-- 802.11 wireless, Bluetooth, GPS
+Back up the device before replacing a broken screen.
+- Broken glass is sharp. A screen protector or clear tape may help protect users until repair.
+- Screen replacement usually has no easy workaround.
 
-Check application battery usage
-- iOS and IPadOS: Seetings/Battery
-- Android: Settings/Battery
+### Charging problems
 
-Swollen battery
+Check each part of the charging process, including the cable, connector, and power adapter.
+- Remove obstructions from the connector.
+- Do not use frayed or damaged cables; try a known-good cable.
+- Check the power adapter with a multimeter if needed.
 
-Buildup of gas
-- Designed to self-contain
-- Do NOT open the battery packet/container
-    Significant fire risk
-    You'll be sorry
+### Connectivity problems
 
-Faulty battery
-- Stop using immediately
-- Dispose of properly
+Poor or unavailable cellular or Wi-Fi connectivity can depend on location and signal strength.
+- Cellular service may be better outdoors.
+- Wi-Fi has limited range; interference can reduce throughput.
+- A channel or frequency change may help with Wi-Fi interference.
 
-Device can be damaged
-- Better than having a fire
+### Liquid damage
 
-Broken screen
+Many phones have a Liquid Contact Indicator (LCI) that changes color after contact with liquid.
+- Power the phone down and do not turn it back on.
+- If possible, remove the case, cards, back cover, and battery.
+- Do not put the phone in rice; this is not an effective drying method.
+- Do not turn it on, charge it, connect it to power, press keys, heat it, or move it around.
+- Wait at least a day, or until it appears dry, and then wait a few additional hours.
 
-TIme for a backup
-- Do this first
+### Overheating
 
-Replace the screen
-- No easy fixes
+Phones may shut down automatically to prevent overheating damage.
+- Battery charging and discharging, CPU use, and display brightness all generate heat.
+- Check app usage because some apps use significant CPU resources.
+- Avoid direct sunlight, which can quickly overheat a phone.
 
-The glass is sharp
-- Screen protectors can help
-- Use clear tape until repaired
+### Digitizer issues
 
-Improper charging
+A digitizer problem may cause a black touchscreen or prevent touches from registering.
+- For an iOS reset, use the device's documented power-off and restart button sequence.
+- To restart some Android devices, remove and reinstall the battery if possible, or hold the power and volume-down buttons.
+- Key combinations vary by phone, and some devices do not support a button-based reset.
 
-Check everything in the charging process
-- Cables, interfaces
+### Physically damaged ports
 
-Check the cable interface
-- Remove any obstructions
+Charging and data-transfer ports can be damaged by rough handling or accidents.
+- Inspect the port if the device will not charge.
+- If the port is not modular, repair may require replacing the system board.
 
-Check the cable
-- Don't use frayed or damaged cables
-- Try a known-good cable
+### Malware
 
-Verify the power adapter
-- Check with a multimeter
+Malware is a concern on mobile devices as well as computers.
+- Look for unusual apps, large data transfers, pop-up messages, high CPU use, overheating, or excessive battery drain.
+- Use a security app or scanner to identify infections.
 
-Poor ot no connectivity
+### Cursor drift
 
-Cellular or WIFI
-- Location, Location, Location
+Random input or cursor movement without touching the device is common on older screens.
+- Recalibrating the screen may resolve the drift.
 
-Cellular
-- Signal strength
-- Location matters
-- Outdoor connectivity may be better
+### Application installation problems
 
-WiFi
-- Limited range
-- Interference can be limit throughput
-- May need a channel/frequency configuration change
+Check available storage and delete unnecessary data if there is not enough space.
+- Check network connectivity because apps are downloaded from external services.
+- Check operating-system and app compatibility; update the OS or app when possible.
+- Clear the Google Play Store cache or verify the iCloud credentials, then log out and back in if needed.
 
-Liquid Damage
+### Stylus problems
 
-Many phones have a Liquid Contact Indicator (LCI)
-- Turns color when liquid has been present
+- Check the stylus battery and recharge it if necessary.
+- Check its Bluetooth connection and try pairing it again.
+- Inspect the stylus for physical wear and replace the tip if needed.
 
-Power down the phone
-- Don't power it back on. Don't do it.
+Restarting the device can reset the operating system and network connections.
 
-Remove the caae, cards, back, batter
-- If possible
+### Degraded performance
 
-Putting the phone in a a bag of rice doesn't actually work well.
+Outdated operating-system or app software, low storage, hardware issues, and too many background apps can slow a device.
+- Update the software and restart the device.
+- Low storage can cause slowdowns and crashes.
+- Faulty RAM or storage can also cause performance problems.
+- Close unused background apps to reduce memory use.
 
-Leave it alone
-- Don't turn it on
-- Do not charge the phone
-- Do not connect it to power
-- Do not press any keys
-- Do not heat the phone
-- Do not move it around
-
-Wait at least a day
-- Or until the phone appears to be dry
-- And then perhaps a few hours after that
-
-Overheating
-
-Phone will automatically shut down
-- Avoid overheating damage
-
-Charging/discharging the battery, CPU usage, display light
-- All of these create heat
-
-Check app usage
-- Some apps can use a lot of CPU
-
-Avoid direct sunlight
-- Quickly overheats
-
-Digitizer issues
-
-Touchscreen completly black or not responding to input
-- Screen presses do not register
-
-Apple iOS reset
-- Press power button, slide to power off, press power button
-- Hold down power button and Honme | Volume for 10 seconds
-
-Android device restart
-- Remove battery, put back in, power on
-- Hold down power and volume down until restart
-    Some phones have different key comnbinations
-    some phones do not have a key based reset
-
-Physically damaged ports
-
-External interface
-- Charging and data transfer
-
-Rough handling and accidents
-- Damages the interface
-
-Not charging
-- Look closely
-
-Not modular
-- Requires a system board replacement
-
-Malware
-
-Always a concern
-- Even on mobile devices
-- The device type doesn't matter
-
-Look for symptoms
-- Unusal apps
-- Large data transfers
-- Pop up messages
-- High CPU usage, device overheating
-- Excessive battery use
-
-Try a security app or scanner
-- Identify malware infections
-
-Cursor drift
-
-Random input or cursor moves without touching the device
-- Common on older screens
-
-The system will adjust to the new calibration parameters
-- No more drift
-
-Unable to install new applications
-
-Available space
-- Check storage capacity and delete unnecessary data
-
-Network Connectivity
-- Apps are downloaded from an external resource
-
-OS or app compatibility
-- Upgrade the OS and check for an updated application version
-
-Store cache or user credentials
-- Clear the Google Play Store cache or check iCloud username and password
-- Logoout and log back in
-
-Stylus doees not work
-
-Power
-- Check the stylus battery charge ad recharge if necessary
-
-Bluetooth connectivity
-- Check the connection and try re-pairing
-
-Stylus hardware issue
-- A stylus can suffer through a lot of physcial wear
-- Check the tip and see if a tip replacement would apply
-
-Restart the device
-- Resets the OS, the network and everything else
-
-Degraded performance
-
-Outdated OS and app software
-- Time to upgrade and restart
-
-Low storage
-- Slowdowns and crashes
-
-Hardware issues
-- Bad RAM or storage drive
-
-Excessive background apps
-- Excessive memory usage - try closing some apps
-
-
-
-
-
+---
 
 ## Troubleshooting Networks
 
+### No network connectivity
 
+Check for a link light and confirm that the cable is connected.
+- Ping the loopback address (`127.0.0.1`) to test the protocol stack.
+- Ping the local IP address to check the local configuration, adapter, and link.
+- Ping the default gateway to test connectivity on the local network.
+- Ping an address beyond the router, such as `8.8.8.8` or `9.9.9.9`.
 
-No network connectivity
+### Intermittent wireless connectivity
 
-Do you have a link light?
-- Is it plugged in?
+Interference from another device using the same frequency can disrupt a wireless connection.
+- Check signal strength and the transmitting and receiving antennas.
+- Check the channel; automatic selection is common, but manual tuning may help.
+- Multipath interference can occur when signals reflect off flat surfaces.
+- Place access points close to the users who need coverage.
 
-Ping loopback (127.0.0.01)
-- Is the protocol stack working?
-- Availiablity and intermittent connectivity
+### Slow network speeds
 
-Ping local IP address
-- Checks local configuration, adapter, and link signal
+A slow connection may not be caused by the network itself.
+- Confirm end-to-end connectivity with a ping or application login, then run a speed test.
+- Evaluate utilization, errors, throughput, and filtering or access control lists (ACLs) at each network hop.
+- A packet capture may be needed for detailed verification.
 
-Ping default gateway
-- Connectivity on the local network 
+### Limited or no connectivity
 
-Ping devices on router's other side
-- 8.8.8.8 or 9.9.9.9
+Windows may display "Limited or no connectivity" or "No Internet Access" in the system tray.
+- Check the local IP address; an APIPA address provides only local connectivity.
+- If a DHCP address is assigned, ping the local gateway and a remote IP address.
 
-Intermittent wireless connectivity
+### Jitter
 
-Interference 
-- Something else is using our frequency
+Real-time media, such as voice and live video, is sensitive to delay and requires data to arrive at regular intervals.
+- Lost packets may not be retransmitted because the conversation cannot be rewound.
+- Jitter is variation in packet arrival times; excessive jitter can cause missed information and choppy voice calls.
 
-Signal strength 
-- transmitting signal, transmitting antenna, recieving antenna
+### Poor VoIP quality
 
-Incorrect channel
-- Usually automatic; look for manual tuning
+Real-time applications require high throughput and low latency.
+- Run a speed test to identify slow links.
+- Verify local networking equipment; an older router can cause problems.
+- Review network performance and use a packet capture if needed.
 
-Bounce and latency
-- Multipath interference; flat surfaces
+### Port flapping
 
-Incorrect access point placement
-- Locate close to the users 
+Port flapping occurs when a network interface repeatedly goes up and down.
+- Verify the cable and wiring.
+- Move the device to another switch interface to determine whether the problem follows the port or the device.
+- Replace faulty hardware or cables; additional purchases may be required.
 
-Slow network speeds
+### High latency
 
-The network is slow!
-- It's probably not the network
+Latency is the delay between a request and its response. Some latency is expected because of the limits of physics.
+- Measure response times at each step; multiple tools may be needed.
+- Packet captures can provide microsecond-level detail. Capture traffic at both ends when possible.
 
-Confirm end-to-end connectivity
-- Ping or application login
-- Validate with a speed test
+### External interference
 
-Evaluate connectivity on each network hop
-- Utilization, errors, total throughput, filtering/ACLs
+Predictable sources include fluorescent lights, microwave ovens, cordless telephones, and other high-power sources.
+- Unpredictable interference can occur in multi-tenant buildings.
+- Measure the signal-to-noise ratio (SNR) and monitor performance.
 
-may require a packet capture
-- The iltimate verification
+The signal is the desired transmission; noise is unwanted interference from other networks or devices. A larger SNR is better; a 1:1 ratio is poor.
 
-Limited or no connectivity
+### Authentication issues
 
-Windows alert in the system tray
-- "Limited or no connectivity"
-- "No Internet Access"
+Accessing a resource requires the correct credentials, such as a username, password, or other authentication factor.
+- Verify that the session is active; it may need to be refreshed by logging out and back in.
+- Authentication problems may be difficult to see when they occur in a service or background process.
+- Capture packets to verify connectivity and look for errors.
 
-Check the local IP address
-- An APIPA address will only have local connectivity
+### Intermittent Internet connectivity
 
-If DHCP address is obtained perform the ping test 
-- Local gateway, remote IP address
+Determine the scope of the outage using ongoing pings, traceroute to a known destination, and speed tests.
+- For external issues, contact the Internet Service Provider (ISP) and have contract and account information available.
+- Check the service-level agreement (SLA).
 
-Jitter
-
-Most real-time media is sensitive to delay
-- Data should arrive at regular intervals
-- Voice communication, Live Video
-
-If you miss a packet, there's no retransmission
-- There's no time to "rewind" you phone call
-
-Jitter is the time between frames
-- Excessive jitter can cause you to miss information, "choppy" voice valls
-
-Poor VoIP quality
-
-High speed and low latency 
-- Real time applications are demanding
-
-Check the Internet Connection
-- A speed test can identify slow links
-
-Verify the local networking equipment
-- An old router can cause significant problems
-
-View the network performance
-- A packet capture would be useful
-
-Port flapping
-
-Network interface goes up and down
-- Over and over again
-
-Verify the cable
-- Check the wiring
-
-Move between switch interfaces
-- Is the flapping associated with the switch interface or the device?
-
-Replace bad hardware or cables
-- May require additonal  purchases
-
-High latency 
-
-A delay between the request and the response 
-- Waiting time
-
-Some latency is expected and normal
-- Laws of physics apply
-
-Examine the response times at every step along the way
-- This may require multiple measurement tools
-
-Packet captures can provide detailed analysis
-- Microsecond granularity
-- Get captures from both sides
-
-External interference
-
-Predictable
-- Flourescent lights
-- Microwave ovens
-- Cordless telephones
-- High-power sources
-
-- Unpredicatable
-- Multi-tenant building
-
-Measurements
-- Signal to noise ratio (SNR)
-- Performance monitor
-
-Siganl to noise ratio (SNR)
-
-Signal 
-- What you want
-
-Noise
-- What you don't want 
-- Interference from other networks and devices
-
-You want a very large ratio
-- The same amount of signal to noise (1:1) would be bad
-
-Authentication issues
-
-Access a resource
-- Requires the proper credentials
-- Username, password, other factors
-
-Verify an active session
-- May need to be refreshed
-- Logout and back in 
-
-May be difficult to see
-- Part of a service or background process
-
-Perform a packet capture
-- Verify connectivity and look for errors
-
-Intermittent Internet Connectivity
-
-Determine the scope of the outage
-- Ongoing pings
-- Tracerout to a know location
-- Speed tests
-
-External issues require external support
-- Work directly with the Internet Service Provider (ISP)
-- Have your contract and account information available
-
-Check your SLA
-- Service level agreeement
-
-
-
-
-
+---
 
 ## Troubleshooting Printers
 
+### Testing and diagnostics
 
+Print or scan a test page using the utility built into Windows or the printer; a separate application is not required.
+- Use web-based tools built into the printer, vendor-specific utilities, or generic diagnostic utilities.
 
-Testing the printer
+### Poor print quality
 
-Print or scan a test page
-- Built into Windows
-- Not an application
+- **Lines down the page:** Clean inkjet print heads or check a laser printer's photosensitive drum for scratches.
+- **Faded prints or blank pages:** Check toner or ink levels.
+- **Double images or speckling:** Clean the laser printer's optical drum. A ghost image may come from a previous drum rotation.
 
-Use diagnostic tools
-- Web-based utilites built into the printer
-- Vendor specific
-- Generic utilities
+### Garbled printing
 
-Bad output
+The wrong printer driver or model may cause garbled output.
+- Check that the page description language (PCL or PostScript) matches the printer.
+- Print a test page to verify printer operation.
+- If only one application has the problem, check its output and update the application.
 
-Lines down the printed page
-- Inkject: Clean print heads
-- Laser: Check for scratched photsensitive drum
+### Paper jams and feed problems
 
-Faded prints, blankk pages
-- Low toner or ink
+Remove jammed paper carefully to avoid tearing it or damaging internal components.
+- If paper does not feed or multiple pages feed at once, check the trays and pickup rollers. Pickup rollers may be included in a laser printer maintenance kit.
+- Creased paper may indicate a problem in the paper path; check the paper weight.
+- Follow the printer manual when clearing jams. Some inkjet printers require a specific procedure.
 
-Double/echo images or speckling
-- Laser printer optical drum not cleaned properly
-- Ghost or "shadow" from previous drum rotation
+### Print queue problems
 
-Garbled print
+Corrupted print jobs can cause the print spooler to crash or freeze. Most spooler configurations restart automatically.
+- Check Windows Event Viewer and the Windows Print Service logs.
+- Monitor the queue to identify whether one job is causing the problem.
 
-Bad printer driver/ wrong model
-- Incorrect page description lanaguage (PCL or PostScript)
+### Grinding noises
 
-Verify the printer functionality
-- Check with a test page
+Grinding indicates that something may not be operating properly.
+- Check for a paper jam or stalled carriage.
+- Follow the manufacturer's maintenance instructions; the printer may require additional maintenance or replacement.
 
-Bad application
-- Check the output 
-- Upgrade the application
+### Finishing problems
 
-Paper jam
+Finishing operations occur after ink or toner is applied and may include collating or binding.
+- For staple jams, follow the manufacturer's procedure; larger printers may collate and staple sets of pages.
+- If hole-punch locations are incorrect, verify the printer driver and update it if needed.
 
-Careful when removing
-- Don't rip the paper
-- Don't damage internal components
+### Incorrect page orientation
 
-paper not feeding or misfeeds multiple pages
-- Check the trays
-- Pickup rollers are part of a laser printer maintenance kit
+If a portrait document prints in landscape, check the settings in the print driver and on the printer console.
+- Update the driver if the orientation settings are correct but the problem persists.
 
-Creased paper
-- Probems in the paper path
-- Check the paper weight 
+### Unrecognized paper tray
 
-Multiple prints pending in queue
+Office printers often have trays for plain letter paper, legal paper, letterhead, or colored paper.
+- The page size selected in the print driver must match the paper in the tray; for example, a 14-inch legal page cannot print correctly on 11-inch letter paper.
+- Compare the user's configuration with the trays installed in the printer.
 
-Corrupted print jobs
-- Print spooler will crash or freeze 
-- Most spooler configuration will automatically restart
+### Connectivity problems
 
-Problems are logged
-- Windows Event Viewer, Windows-Print Service
-
-One job may be causing the issue 
-- Monitor the queue for details
-
-Grinding nosies 
-
-Never a good sound from your printer
-- The ink is already manufactured
-
-Something is not operting properly
-- Paper jam
-- Carriage is stalled or jammed
-
-Each printer has a different process
-- Check the manuals for removing paper jams
-- Some inkjet printers have a particular process
-
-May require additonal maintenance 
-- Or replace the printer
-
-Finishing issues
-
-Finishing happens after the ink or toner has been applied
-- Collate, binding
-
-Staple jams
-- larger printer will ollate and staple groups of papers
-- Each printer manufacturer has a different removal process
-
-Incorrect hold punch location
-- Verify with the printer driver
-- May require a driver update
-
-Incorrect page orientation
-
-Print a portrait page
-- Get a landscape print
-
-Check the settings when printing
-- Controlled the print driver
-- May require a driver update
-
-The printer also has a default setting
-- Check the settings on the printer console
-
-Tray not recognized
-
-Office printer often have multiple paper trays
-- Plain letter, plain legal, letterhead, paper colors
-
-The size of the printed page needs to match the size of the paper in the tray
-- You can't print a 14" legal page to an 11" letter page
-
-The definition of the paper tray is part of the driver configuration
-- Compare the user's configuration with the installed printer trays
-
-Connectivity issues
-
-the printer is a network device
-- Follows the same rules as any other device
-
-Confirm the connection type
-- Wired , wireless
-
-Verify IP address configuration
-- IP, subnet masks, default gateway, DNS, etc
-
-Check the print server
-- May be part of the printer
+Printers are network devices and follow the same networking rules as other devices.
+- Confirm whether the connection is wired or wireless.
+- Verify the IP address, subnet mask, default gateway, DNS, and other network settings.
+- Check the print server, which may be part of the printer.
