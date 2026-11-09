@@ -2280,15 +2280,17 @@ Overall size
 ## The BIOS
 
 
-    Bios - Basic Input/ Output System
+### BIOS (Basic Input/Output System)
 
-    The software used to start your computer
-        - The firmware
-        - System BIOS, ROM BIOS
-        - ROM or flash memory
+The software used to start your computer
+* Firmware
+* Also called System BIOS or ROM BIOS
+* Stored in ROM or flash memory
 
-Initalizes CPU and memory
-- Build the workspace
+### Startup sequence
+
+Initializes the CPU and memory
+* Builds the workspace
 
 POST
 - Power on self test
@@ -3005,178 +3007,77 @@ There's an established certification program
 - Pick the right efficiency for you requirements
 
 
-
-
-
-
 ## Multifunction Devices
 
-    MFDs
-        Printers, scanner, fax (yes, really) Netwrok connection, phone line connection,     print from the web
+### Multifunction devices
 
-        A lot of things can go wrong
-        You're going to fix them
-        Unboxing a device
+Multifunction devices (MFDs) combine printing, scanning, faxing, network access, and sometimes phone-line connections or web printing.
+* Many things can go wrong, so installation and troubleshooting are part of the job.
+* During unboxing, plan for the device's size and keep it out of walkways.
+* Check the area for power, network access, and accessibility.
 
-        These can be large devices
-            Make sure you can have enough room 
-            Stay out of walkways
+### Printer drivers
 
-        Check the area
-            Power
-            Network
-            Accessibility
+* Use drivers specific to the printer model.
+* Select drivers for the correct operating system, such as Windows 10 or Windows 11.
+* Select the correct operating system version; 32-bit drivers differ from 64-bit drivers.
+* Drivers cannot be mixed and matched.
 
-    Printer drivers
+### PCL and PostScript
 
-        Specific to a printer model
-            Get this exactly right
+* PCL (Printer Command Language) was created by Hewlett-Packard and is commonly used across the industry.
+* PostScript was created by Adobe Systems and is popular with high-end printers.
+* Match the drivers to the printer: PCL printers need PCL drivers, and PostScript printers need PostScript drivers.
 
-        Get the righ operating system drivers
-            Windows 10, windows 11
+### Firmware
 
-        Get the right version of the operating system
-            32-bit drivers are very differetn than 64- bit drivers
+The firmware is the multifunction device's internal operating system.
+* Starts the system and connects it to the network.
+* Interprets incoming data and runs the printing process.
+* Update firmware to avoid incompatibilities and fix bugs.
+* Download firmware from the device manufacturer's website and install it with a stable platform and power source.
 
-        You can't mix and match drivers
-            It's a very specific task
+### Wired device sharing
 
-    PCL or Post Script
+* **USB:** A common connector. Printers may use USB Type B while computers use USB Type A, or both may use USB-C.
+* **Ethernet:** Uses an RJ45 connector.
+* A printer may support more than one connection option.
 
-        PCL (Printer Command Language)
-            Created by Hewlett-Packard
-            Commonly used across the industry
+### Wireless device sharing
 
-        PostScript
-            Created by Adobe Systems
-            Popular with high end printers
+* **Bluetooth:** Limited range.
+* **802.11 infrastructure mode:** Multiple devices connect through an access point.
+* **802.11 ad hoc mode:** Devices connect directly without an access point.
 
-        Make sure the drivers match the printer
-            PCL printer, PCL drivers
-            PostScript printer, PostScript driver
+### Printer sharing
 
-    Firmware
+* **Printer share:** The printer connects to a computer, which shares it with other users. The computer must be running.
+* **Print server:** Sends jobs directly to the printer. Jobs are queued and managed on the printer, often through a web interface or client utility.
 
-        The internal 'operating system' of the multifunction device
-            Starts the system
-            Connects to the network
-            Interprets the incoming data stream
-            Runs the printing process
+### Configuration settings
 
-        Update the firmware to avoid any incompatibilites
-            And probably fix a few bugs
+* **Duplex:** Saves paper by printing on both sides; not all printers support it.
+* **Orientation:** Choose portrait or landscape. The paper does not rotate; the printer adjusts the output.
+* **Tray settings:** Printers may have multiple trays for plain paper or letterhead. Choose the correct tray in the print dialog.
+* **Quality:** Configure resolution, color or grayscale, and color-saving options.
 
-        Get the latest firmware from the device website
-            Install from a stable platform and power source
+### Printer security
 
-    Wired device sharing
+* **User authentication:** Set rights and permissions for printing and printer management, or allow everyone to print.
+* **Badging:** Require users to authenticate at the printer with an employee badge before their jobs print.
+* **Audit logs:** Support cost management and security monitoring. Logs may be available in Event Viewer, system events, the printer, or the print server.
+* **Secure printing:** The printer must support it. Set a passcode and enter it at the printer to release the job.
 
-        USB
-            A commin connector
-            USB Type b on the printer, USB Type A on the computer
-            Or USB-C everywhere
+### Flatbed scanners
 
-        Ethernet 
-            RJ45 connector
+* Available as part of an all-in-one multifunction device or as a standalone flatbed.
+* May include an ADF (Automatic Document Feeder) for multiple pages.
 
-        May include more than one option
+### Network scan services
 
-    Wireless device sharing
-
-        Bluetooth
-            Limited range
-
-        802.11 Infrastructure mode
-            Many devices using an access point
-
-        802.11 Ad hoc mode
-            No access point
-            Direct link between wireless devices
-
-    Sharing the printer
-
-        Printer share
-            Printer is connected to a computer
-            The computer shares the printer
-            Computer needs to be running
-
-        Print server
-            Print directly to the printer
-            Jobs are Queued on the printer
-            Jobs are managed on the printer
-            Web-based front end
-            Client utility
-
-    Configuration settings
-
-        Duplex
-            Save paper
-            Print on both sides of the page without manually flipping over the paper
-            Not all printer can do this
-
-        Orientation
-            Portrait v landscape
-            The paper doesn't rotate
-            The printer compensates
-
-        Tray settings
-            Printers can have mulitple trays
-            Plain paper, letterhead
-            Choose the correct tray in the print dialog
-
-        Quality 
-            Resolution
-            Color, greyscale
-            Color saving
-
-    Printer Security 
-
-        User authentication
-            Everyone can print
-            Set rights and permissions
-            Printing vs managaing the printer
-
-        Badging
-            Authenticate when using the printer
-            Your job doesn't print until you use your employee badge
-            Quick and easy
-
-        Audit logs
-            Cost management
-            Security monitoring
-            Event Viewer/ System Events
-            May be built into the printer or print server
-
-        Secured prints
-            Printer must support secure printing
-            Define a passcode
-            Use the passcode at the printer
-
-    Flatbed scanner
-
-        Different form factors
-            All-in-one multifunction device
-            Standalone flatbed
-
-        May include an ADF
-            Automatic Document Feeder
-            Mullitple pages
-
-    Network scan services
-
-        Scan to email
-            Scans are sent to your inbox
-            Large scans can fill up your mailbox
-
-        Scan to folder
-            Using SMB (Server Message Block)
-            Send to a Microsoft Share
-
-        Scan to cloud
-            Cloud storage account
-            Google Drive, Dropbox, etc
-
-
+* **Scan to email:** Sends scans to your inbox; large scans can fill your mailbox.
+* **Scan to folder:** Uses SMB (Server Message Block) to send files to a Microsoft share.
+* **Scan to cloud:** Stores scans in a cloud account such as Google Drive or Dropbox.
 
 
 ## Laser Printer Maintenance
@@ -3596,204 +3497,100 @@ Paper must feed without constraint
 
 ## Virtualization and cloud computing (11%)
 
-    Virtualization concepts: understanding virtual machines, hypervisors, and desktop virtualization.
-    Cloud models: learning about Iaas, SaaS, and PaaS.
+Virtualization concepts include virtual machines, hypervisors, and desktop virtualization. Cloud models include IaaS, SaaS, and PaaS.
 
     
 ## Virtualization Concepts
 
-        One computer, many operating systems
-            macOS, Windoes 11, Linux Ubuntu, all at the same time
+One computer can run multiple operating systems, such as macOS, Windows 11, and Ubuntu Linux, at the same time.
+* Each operating system has its own CPU, memory, and network resources, even though they share one physical computer.
+* **Host-based virtualization:** Runs virtual machines alongside your normal desktop environment.
+* **Standalone virtualization:** An enterprise server hosts virtual machines.
+* Virtualization has been used since IBM mainframe systems in 1967.
 
-        Serperate OS, independent CPU, memory, network
-            But really one computer
+### Sandboxing
 
-        Host based virtualization 
-            Your normal dekstop plus others
+A sandbox is an isolated testing environment with no connection to the real world or production system.
+* Provides a safe place to try code and recover from mistakes.
+* Developers can build applications in a secure environment and test them in separate sandboxes.
+* Additional development features can include restoring a previous snapshot and running additional systems.
+* A separate test environment brings the pieces together to check that they work.
 
-        Standalone server that hosts virtual machines
-            Enterprise-level
+### Legacy software and operating systems
 
-        Been around since 1967
-            IBM mainframe virtualization
+* Run different versions of an application in separate VMs on the same system.
+* If an application requires an older operating system, create a VM with that operating system.
 
-    Sandboxing
+### Cross-platform virtualization
 
-        Isolated testing enviroment
-            No connection to the real world or production system
-            A technological safe space
-
-        Virtualize development process
-            Try some code, break some code, nobody gets hurt
-
-        Addtional development features
-            Roll back to a previous snapchat
-            Run additional systems
-
-        Building the application
-            Secure enviroment
-            Writing code
-            Developers test in theri sandboxes
-
-        Test 
-            A seperate virtual enviroment for testing
-            Still in the development stage
-            All of the pieces are put together 
-            Does it all work?
-
-    Legacy software and operating systems
-
-        Need to run differetn application versions on the same system
-            Run each application instance in a seperate VM
-
-        Application only runs on a previous OS version
-            Create a VM with the older operating system
-
-    Cross-Platform virtualization
-
-        Windows/ macOS/ Linux doesn't do everything
-            Each OS has strengths and weaknesses
-
-        Run differetnt operating systems at the same time
-            Move between each OS seamlessly
-            No rebooting
-
-        Save time and resources
-            One physcial computer
+* Windows, macOS, and Linux each have strengths and weaknesses.
+* Run different operating systems at the same time and move between them without rebooting.
+* Save time and resources by using one physical computer.
 
 
 
 
 ## Virtualization Services
 
-    The hypervisor
+### The hypervisor
 
-        Virtual Machine Manager
-            Manages the virtual platform and guest operating systems
+A hypervisor, or virtual machine manager, manages the virtual platform and guest operating systems.
+* May require a CPU that supports virtualization, which can improve performance.
+* Manages hardware resources such as the CPU, networking, and security.
+* Allows multiple operating systems to run on the same hardware.
+* Each application instance has its own operating system, adding overhead and complexity. Virtualization can be relatively expensive.
 
-        May require a CPU that supports virtualization
-            Can improve performance
+### Hypervisor types
 
-        Hardware management
-            CPU
-            Networking
-            Security
+* **Type 1: Bare metal.** The hypervisor is the primary operating system. Examples include VMware ESXi, Microsoft Hyper-V, and Xen Project.
+* **Type 2: Hosted.** The hypervisor runs in an existing OS such as Windows, Linux, or macOS, and virtual machines run on top of it. Examples include VMware Player, Oracle VirtualBox, and Parallels Desktop.
 
-        Virtualization
-            Run many different operating systems on the same hardware
+### Resource requirements
 
-        Each appliation instances has its own operating system
-            Adds overhead and complexity
-        Virtualization is realively expensive
+* **CPU:** Intel Virtualization Technology (VT) or AMD-V support.
+* **Memory:** Additional memory beyond the host OS requirements.
+* **Disk space:** Each guest OS has its own image and needs space for the OS and data.
+* **Network:** Configure networking for each guest OS, often with a virtual switch.
 
-    Hypervisor Types
+### Network requirements
 
-        Type 1: Bare metal
-            The hypervior is the primary operating system
-                VMware ESXI, Microsoft Hyper-V, Xen project
+Most client-side virtual machine managers provide their own internal virtual networks.
+* **Shared network address:** The VM shares the physical host's IP address, uses a private IP address internally, and uses NAT to translate traffic to the host IP.
+* **Bridged network address:** The VM appears as a device on the physical network.
+* **Private address:** The VM cannot communicate outside the virtual network.
 
-        Type 2: Hosted
-            Hypervisor runs in the existing OS (Windows, Linux, macOS)
-            Virtual machines run on top of the current OS
-            VMware Player, oracle virutalbox, parrallels desktop
+### Hypervisor security
 
-    Resource Requirements
+* The hypervisor is an attractive target, though the notes report no significant vulnerabilities yet.
+* **VM escaping:** Malware detects that it is in a VM, compromises the hypervisor, and may move between guest operating systems.
+* Hosted services use virtual environments; malware on one customer's server may attempt to gather information from another.
 
-        CPU processor Support
-            Intel: Virutalization Technology (VT)
-            AMD: AMD-V
+### Guest operating system security
 
-        Memory
-            Above and beyond host OS requirements
+Each guest is self-contained, like a real computer.
+* Use traditional security controls such as a host-based firewall and antivirus or anti-spyware software.
+* Watch for rogue VMs that attackers try to install.
+* Self-contained VMs provided by third parties can be dangerous because you may not know what is running on them.
 
-        Disk space
-            Each guest OS has it's own image
-                Requires available space to store OS and data
+### Virtual Desktop Infrastructure (VDI)
 
-        Network
-            Configurable on each guest OS
-            Virtual switch
+* Applications run on a remote server; the local device provides a keyboard, mouse, and screen.
+* Desktop as a Service (DaaS) is a related model.
+* The client can use a minimal operating system and require less memory and CPU power.
+* Network connectivity is critical because everything happens across the network.
 
-    Network requirements
+### Application containerization
 
-    Most client-side virtual machine managers have their own virtual (internal) networks
-
-        Shared network address
-            The virual machine shares the same IP address as the physical host
-            Uses a private Ip address internally
-            Uses NAT to convert to the physical host IP
-
-        Bridged network address
-            The VM is a device on the physical network
-
-        Private address
-            The VM does not commnicate outside the virtual network
-
-    Hypervisor security
-
-        Hypervisor is a sweet spot for the bad guys
-            No significant vulnerabilities yet
-
-        VM escaping
-            Malware recognized it's on a virtual machine
-            Malware compromises the hypervisor
-           Malware jumps from one guess OS to another
-
-        Many hosted services are virtual enviroments 
-           Malware on one custormer's server can gather information from another
-
-    Guest operating system security
-
-        Every guest is self contained
-          Like a real computer
-
-        use tradtional security controls
-            Hosted based firewall
-            Antivirus, anti spyware
-
-        Watch out for rogue virtual machines (VMs)
-            The attackers try to install their own system
-                   You're in big trouble
-
-        Self contained VMs provided by 3rd parties can be dangerous
-            You have no idea what's running on there
-
-    Virtual Desktop Infrastructure (VDI)
-
-        Basic application usage
-            Applications actually run on a remote server
-            Local device is a keyboard, mouse and screen
-            Desktop as a service (DaaS)
-
-        Minimal operating system on the client 
-            No huge memory or CPU needs
-
-        Network Connectivity
-            Big network requirement
-            Everything happens across the wire
-
-    Application Containerization
-
-        Container
-            Contains everything you need to run an application
-            Code and dependencies
-            A standardized unit of software
-
-        An isolated process in a sandbox
-            Self contained
-            Apps can't interact with each other
-
-        Container image
-            A standard for portability
-            Lightweight, uses the host kernal
-            Secure seperation between applications
+A container is a standardized, portable unit of software that contains an application and its dependencies.
+* Runs as an isolated process in a sandbox so apps cannot interact with each other.
+* Container images are lightweight, use the host kernel, and provide separation between applications.
 
 
 
 
 ## Cloud Models
 
-    Cloud computing
+### Cloud computing
 
 More than just a server hosted elsewhere
 - Extend the management of applications and services
@@ -4117,15 +3914,14 @@ Clicking
 Pop 
 - Blown capacitor
 
-Inaccurate system date/time
+### Inaccurate system date and time
 
-Bad motherboard battery
-- Often a "button" style battery
+* A bad motherboard battery is a common cause; it is often a button-style battery.
 
 A bad battery will require a BIOS configuration or date/time configuration on every boot
 
 On older systems, can reset the BIOS configuration by removiing the battery
-- Newer computers use a jumper
+* Newer computers use a jumper
 
 
 ## Hardware and network troubleshooting (28%)
@@ -5019,6 +4815,3 @@ Verify IP address configuration
 
 Check the print server
 - May be part of the printer
-
-
-
