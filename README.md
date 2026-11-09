@@ -1,5 +1,5 @@
-# CompTIA A+ Study Notes
-
+# CompTIA A+ Study Notes (Professor Messer) 
+https://www.professormesser.com
 Organized reference notes on networking, hardware, virtualization, peripherals, and troubleshooting.
 
 ---
